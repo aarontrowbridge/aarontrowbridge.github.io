@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  The Freeman Algorithm
+title:  the Freeman algorithm
 date:   2021-06-09 
 description: an accelerated approach to the Metropolis algorithm for lattice quantum gravity
 ---
 
 ### Intro 
 
-Just about a year ago today, my research advisor asked me to help develop and implement an algorithm he had come up with to speed up the Metropolis algorithm, in the regime where the acceptance probability is very low, which is the case in lattice simulations of quantum gravity. 
+Just about a year ago today, I began working on implementing an algorithm my undergrad research advisor had devised to speed up [the Metropolis algorithm](https://en.wikipedia.org/wiki/Metropolis-Hastings_algorithm), in the regime where the acceptance probability is very low, which is the case in lattice simulations of quantum gravity. 
 
 ### Quantum Gravity
 
@@ -27,7 +27,7 @@ $$
 Z = \int \mathcal{D}[g] \exp \left(\frac{1}{16\pi G}\int d^4 x \sqrt{-g}(R - 2\Lambda) \right) 
 $$
 
-Ignoring for a moment the subtleties of evaluating a path integral in general, in this case, it turns out that the term inside of the exponential, [the Einstein-Hilbert action](https://en.wikipedia.org/wiki/Einstein-Hilbert_action), causes some serious problems. $$Z$$ is perturbatively non-renormalizable, which is technical jargon that means the theory spits out infinities when we try to calculate simple interactions and those infinities only get worse when we attempt to "cancel them off", which is a prescription that miraculously works in other (renormalizable) theories, like quantum electrodynamics.  
+Ignoring for a moment the subtleties of evaluating a path integral in general, in this case it turns out that the term inside of the exponential, [the Einstein-Hilbert action](https://en.wikipedia.org/wiki/Einstein-Hilbert_action), causes some serious problems. $$Z$$ is perturbatively non-renormalizable, which is technical jargon that means the theory spits out infinities when we try to calculate simple interactions and those infinities only get worse when we attempt to "cancel them off", which is a prescription that miraculously works in other (renormalizable) theories, like quantum electrodynamics.  
 
 Hope remains though... while a perturbative expansion of $$Z$$ blows up, an idea known as [asymptotic safety](https://en.wikipedia.org/wiki/Asymptotic_safety_in_quantum_gravity) might save the day. This is what the group I became a part of is working on.  More specifically we are using a computational technique called dynamical triangulation to calculate a discretized version of $$Z$$ on a lattice of 4-dimensional simplices.
 
@@ -50,6 +50,6 @@ There are some more subtleties and technical points - if interested, details can
 <p align="center">
    <a href="http://www.youtube.com/watch?feature=player_embedded&v=_Ppx0e3aG-E" target="_blank">
       <img src="http://img.youtube.com/vi/_Ppx0e3aG-E/maxresdefault.jpg" 
-      alt="IMAGE ALT TEXT HERE" width="850">
+      alt="IMAGE ALT TEXT HERE" width="90%">
    </a>
 </p>
