@@ -37,13 +37,13 @@ The beauty of science is that every solution only leads to more problems... our 
 
 The new algorithm basically goes as follows:
 
-- think about every possible thing we could do and assign a number (probability) to each possibility
-- imagine every possibility as a book on a shelf, with the width of the book corresponding to the probability of picking it
-- blindly approach the book shelf and choose a book
+1. think about every possible thing we could do and assign a number (probability) to each possibility
+2. imagine every possibility as a book on a shelf, with the width of the book corresponding to the probability of picking it
+3. blindly approach the book shelf and choose a book
 
 This way, each time we want to do something, we actually do something.  Which is great!
 
-There are some more subtleties and technical points - if interested, details can be found in the [slides](/assets/pdf/quantum_gravity_pres.pdf) of a presentation I made about this research.  If *very* interested you can also watch a recording of the presentation:
+There are some more subtleties and technical points - if interested, details can be found in the [slides](/assets/pdf/quantum_gravity_pres.pdf) of a presentation I made about this research.  If *very* interested, you can also watch a recording of the presentation:
 
 <br>
 
