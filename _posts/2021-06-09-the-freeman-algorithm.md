@@ -3,6 +3,7 @@ layout: post
 title:  the Freeman algorithm
 date:   2021-06-09 
 description: an accelerated approach to the Metropolis algorithm for lattice quantum gravity
+tags: quantum-gravity numerical-methods
 ---
 
 ### Intro 
