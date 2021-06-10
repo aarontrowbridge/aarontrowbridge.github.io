@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-description: <a href="assets/pdf/resume.pdf"> resume </a> | socials below
+description: <a href="assets/pdf/resume.pdf"> resume </a> | contact me (tap icons below)
 
 profile:
   align: right
