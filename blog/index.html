@@ -15,21 +15,33 @@ pagination:
 <div class="post">
 
   <div class="header-bar">
-    <h1>{ posts }</h1>
-    <!-- <h2>{{ site.blog_description }}</h2> -->
+    <h1> { posts } </h1>
+      {% assign tags = site.posts | all_tags %}
+      {% for tag in tags %}
+        {% assign tag_slug = tag['name'] | slugify: "raw" %}
+          <a class="tag-link"
+            href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }}
+            rel="category tag">
+            <code>:{{ tag['name'] }} ({{ tag['count'] }})</code>
+          </a>
+      {% endfor %}
   </div>
 
 
   <ul class="post-list">
     {% for post in paginator.posts %}
       <li>
-        <h3><a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-        {{ post.tags }}
-        <!-- {% for tag in post.tags %}
-          <p> {{ tag }} </p>
-        {% endfor %} -->
         <p class="post-meta">{{ post.date | date: '%B %-d, %Y' }}</p>
+        <h2><a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
         <p>{{ post.description }}</p>
+        {% for tag in post.tags %}
+          {% assign tag_slug = tag | slugify: "raw" %}
+            <a class="tag-link"
+              href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }}
+              rel="category tag">
+              <code>:{{ tag }}</code>
+            </a>
+        {% endfor %}
       </li>
     {% endfor %}
   </ul>

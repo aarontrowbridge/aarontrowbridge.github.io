@@ -7,8 +7,6 @@ description: <a href="assets/pdf/resume.pdf"> resume </a> | contact me (tap icon
 profile:
   align: right
   image: sunset_graduation.jpeg
-  address: 
-
 
 news: false  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
