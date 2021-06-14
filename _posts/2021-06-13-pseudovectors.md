@@ -171,8 +171,10 @@ $$
 >
 >So, even though I haven't yet explicitly forbidden it, we will now implicitly sum over any like indices, not just those that appear pairwise upstairs and downstairs.
 
+##### ***determinants and pseudovector transformations***
 
-With this knowledge and a little mathematical sorcery, which I will elucidate in a later post, we can now *define* the determinant of an $$n \times n$$ matrix $$A$$:
+
+With the knowledge we have built up, and a little mathematical sorcery, which I will elucidate in a later post, we can now *define* the determinant of an $$n \times n$$ matrix $$A$$:
 
 $$
 \vert A \vert \equiv \det A = \epsilon(A_1, \dots, A_n) = \sum_{i_1,\dots,i_n} \epsilon_{i_1,\dots,i_n} A^{i_1}_1 \dots A^{i_n}_n
@@ -185,7 +187,7 @@ $$
 $$
 
 
-Let's now see how the components of our vector, $$v$$, transform, when we take $$e_i \rightarrow e_{i'} = A^j_{i'}e_j$$.  Plugging in, we get
+Let's now see how the components of our vector, $$v$$, transform, when we take $$e_i \rightarrow e_{i'} = A^j_{i'}e_j$$.  Plugging in, we see that
 
 $$
 \begin{align}
@@ -205,7 +207,7 @@ Thus, we arrive at the resolution to the original dilemma - the two definitions 
 >v \rightarrow v' = \det(-I) (-I)v = v,
 >$$ 
 >
->which is exactly what it means for a vector to be invariant under inversion.  
+>which is exactly what it means for a pseudovector to be invariant under inversion.  
 
 >**Under a General Improper Rotation** (i.e., $$A = (-I)R$$), 
 >
@@ -213,7 +215,7 @@ Thus, we arrive at the resolution to the original dilemma - the two definitions 
 >v \rightarrow v' = \det\big((-I) R\big) A v = \det(-I) \det(R) A v = - A v, 
 >$$ 
 >
->which is what it means for a pseudovector to pick up an extra sign. 
+>which is what it means for a pseudovector to pick up a minus sign. 
 
 Note that in even dimensions, $$\det(-I) = 1$$, which is why we needed to restrict ourselves to $$\mathbb{R}^3$$.
 
