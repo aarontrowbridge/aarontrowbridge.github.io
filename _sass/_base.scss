@@ -8,8 +8,16 @@ p, h1, h2, h3, h4, h5, h6, em, div, span, strong {
   color: var(--global-text-color);
 }
 
+body {
+  // font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
 article div {
   margin-bottom: 1rem;
+}
+
+span.keeptogether {
+  white-space: nowrap ;
 }
 
 a, table.table a {
@@ -497,4 +505,30 @@ html.transition *:before,
 html.transition *:after {
   transition: all 750ms !important;
   transition-delay: 0 !important;
+}
+
+
+// Blockquote
+
+blockquote {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+}
+
+blockquote {
+    border-left: 1px solid #777;
+    font-style: italic;
+    margin-bottom: 30px;
+    padding: 0 0 0 30px;
+}
+
+blockquote {
+    margin: 0 24px;
+}
+
+blockquote, q {
+    quotes: "" "";
 }

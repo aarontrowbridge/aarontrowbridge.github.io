@@ -22,7 +22,7 @@ pagination:
           <a class="tag-link"
             href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }}
             rel="category tag">
-            <code>:{{ tag['name'] }} ({{ tag['count'] }})</code>
+            <span class="keeptogether"> <code> :{{ tag['name'] }} ({{ tag['count'] }})</code></span>
           </a>
       {% endfor %}
   </div>
