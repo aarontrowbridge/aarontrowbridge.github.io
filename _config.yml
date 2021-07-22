@@ -8,7 +8,7 @@ middle_name:
 last_name: Trowbridge
 email: aaron.j.trowbridge@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Welcome to the beginning of my blog.
+  this is my blog. I write about physics, math, and computational methods.
 footer_text: 
 icon: 🪶 # the emoji used as the favicon
 url: # the base hostname & protocol for your site
@@ -56,7 +56,7 @@ wikidata_id: # your wikidata id
 
 contact_note: >
 
-google_analytics: UA-XXXXXXXXX # out your google-analytics code
+google_analytics: G-7WFMSW8MRP # out your google-analytics code
 panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 
 # -----------------------------------------------------------------------------
@@ -87,6 +87,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+  tags:
+    output: true 
+    permalink: /tags/:path/
 
 news_limit: 5
 
@@ -161,7 +164,7 @@ scholar:
 # Optional Features
 # -----------------------------------------------------------------------------
 
-enable_google_analytics:    false  # enables google analytics
+enable_google_analytics:    true   # enables google analytics
 enable_panelbear_analytics: false  # enables panelbear analytics
 enable_mansory:             true   # enables automatic project cards arangement
 enable_math:                true   # enables math typesetting (uses MathJax)
@@ -170,7 +173,7 @@ enable_tooltips:            false  # enables automatic tooltip links generated
 enable_darkmode:            true   # enables switching between light/dark modes
 enable_navbar_social:       false  # enables displaying social links in the
                                    # navbar on the about page
-enable_project_categories:  true   # enables categorization of projects into
+enable_project_categories:  false  # enables categorization of projects into
                                    # multiple categories
 enable_medium_zoom:         true   # enables image zoom feature (as on medium.com)
 

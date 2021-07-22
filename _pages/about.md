@@ -2,13 +2,11 @@
 layout: about
 title: about
 permalink: /
-description: <a href="assets/pdf/resume.pdf"> resume </a> | contact me (tap icons below)
+description: <a href="assets/pdf/resume.pdf"> <i> resume </i> </a> | <i> contact me <small> (tap icons below) </small> </i>
 
 profile:
   align: right
   image: sunset_graduation.jpeg
-  address: 
-
 
 news: false  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"

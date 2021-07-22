@@ -23,9 +23,14 @@ $pink-color:          #f92080 !default;
 $pink-color-light:    #ffdddd !default;
 $yellow-color:        #efcc00 !default;
 
+$link-color-light:    #4e2669 !default;
+$link-color-dark:     #bc98df !default;
+
+
 $grey-color:          #828282 !default;
+$grey-color-card:     #7a7a7a !default;
 $grey-color-light:    lighten($grey-color, 40%);
-$grey-color-dark:     darken($grey-color, 25%);
+$grey-color-dark:     darken($grey-color, 35%);
 
 $white-color: #ffffff !default;
 $black-color: #000000 !default;
@@ -34,5 +39,5 @@ $black-color: #000000 !default;
 // Theme colors
 
 $code-bg-color-light:     rgba($purple-color, 0.05);
-$code-bg-color-dark:      #2c3237 !default;
+$code-bg-color-dark:      #141518 !default;
 
