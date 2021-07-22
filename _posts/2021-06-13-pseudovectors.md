@@ -5,8 +5,6 @@ description: a look at the properties of pseudovectors
 tags: linear-algebra tensors group-theory geometry
 ---
 
-### Intro
-
 ***Pseudovectors***, or ***axial vectors*** as they are sometimes referred to as, are commonly encountered, but mysterious mathematical objects.  In physics they arise in many different areas, particularly when cross products are involved - e.g., magnetic fields, angular momentum, and torque.  
 
 The goal of this post is to address two seemingly different definitions of a pseudovector, in 3 dimensions, and in the process unravel this mystery.    
@@ -17,11 +15,11 @@ The goal of this post is to address two seemingly different definitions of a pse
 
 <br>
 
-### Background
+## Background
 
 Before jumping into some calculations I will briefly go over some of the aforementioned terminology.
 
-##### ***tensors***
+#### **Tensors**
 
 I could opt to take the easy way out and use ***the physicist's definition*** of a tensor: *a tensor is a quantity that transforms like a tensor*, and leave it at that.
 
@@ -47,7 +45,7 @@ $$
 
 which rightfully resembles the matrix elements of a linear operator. There are some subtle differences that going into will, unfortunately, take us to far astray.  I will postpone a detailed look at matrix representations of linear operators to another blog post.  
 
-##### ***transformations***
+#### **Transformations**
 
 *In what follows, the [Einstein summation convention](https://en.wikipedia.org/wiki/Einstein_notation), where like indices are implicitly summed over, will be used.*
 
@@ -94,7 +92,7 @@ $$
 
 Which is what it means for a quantity to transform as a vector.
 
-##### ***rotations and reflections***
+#### **Rotations and Reflections**
 
 An immediate consequence of the vector transformation rules is that
 
@@ -129,11 +127,11 @@ The improper rotation $$-I$$ is what was previously referred to as ***inversion*
 
 <br>
 
-### Pseudovectors
+## Pseudovectors
 
 We can finally get to the topic at hand! The extra work we put in will now aid us as we look at pseudovectors from couple different angles and hopefully mitigate some of the confusion, which I realize might have only built up since we began.
 
-##### ***cross products and the Levi-Civita tensor***
+#### **Cross Products and the Levi-Civita Tensor**
 
 The cross product is a very special operation in physics and mathematics, as it arises all over the place in various physical theories and is mathematically unique to 3-dimensions, and is in fact a pseudovector as we will see.  Traditionally, given 2 vectors, $$\mathbf{a}, \mathbf{b} \in \mathbb{R}^3$$, we can can take their cross product
 
@@ -171,7 +169,7 @@ $$
 >
 >So, even though I haven't yet explicitly forbidden it, we will now implicitly sum over any like indices, not just those that appear pairwise upstairs and downstairs.
 
-##### ***determinants and pseudovector transformations***
+#### **Determinants and Pseudovector Transformations**
 
 
 With the knowledge we have built up, and a little mathematical sorcery, which I will elucidate in a later post, we can now *define* the determinant of an $$n \times n$$ matrix $$A$$:

@@ -6,8 +6,6 @@ description: an accelerated approach to the Metropolis algorithm for lattice qua
 tags: quantum-gravity numerical-methods
 ---
 
-### Intro 
-
 Just about a year ago today, I began working on implementing an algorithm my undergrad research advisor had devised to speed up [the Metropolis algorithm](https://en.wikipedia.org/wiki/Metropolis-Hastings_algorithm), in the regime where the acceptance probability is very low, which is the case in lattice simulations of quantum gravity. 
 
 ### Quantum Gravity

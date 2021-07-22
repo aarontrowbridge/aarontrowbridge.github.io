@@ -5,8 +5,6 @@ date: 2021-06-01
 description: an introduction and outline of my goals for this blog
 ---
 
-### Intro
-
 Introductions are tricky.  Where are you supposed to begin? I think I've had a pretty interesting life so far, of course, I am biased, but I'm not going to go deep into any of that, right now.
 
 As an undergraduate I had the opportunity to work on many interesting projects, most of which are computational, and can be found on my [github](https://github.com/aarontrowbridge) with poor to nonexistent documentation.  
