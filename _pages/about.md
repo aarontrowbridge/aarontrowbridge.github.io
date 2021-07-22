@@ -18,7 +18,7 @@ social: true  # includes social icons at the bottom of the page
 Graduated from Syracuse University in December of 2020 with a dual B.S. in Physics
 and Mathematics.  
 
-Stayed at Syracuse for the spring as graduate teaching assistant and took my first
+Stayed at Syracuse in the spring as graduate teaching assistant and took my first
 quantum field theory course as well as a graduate math course on Lie groups, Lie algebras, 
 and representation theory.
 
