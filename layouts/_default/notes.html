@@ -1,0 +1,20 @@
+{{- define "main" }}
+
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="notes-description">
+    {{ .Description }}
+  </div>
+  {{- end }}
+</header>
+
+
+{{- partial "toc.html" . }}
+
+<div class="post-content"> 
+  {{ .Content }}
+</div>
+
+
+{{- end }}{{/* end main */}}

@@ -69,7 +69,7 @@ params:
         imageTitle: my image
         buttons:
             - name: Resume
-              url: resume.pdf
+              url: documents/resume.pdf
             - name: Posts
               url: posts
             - name: Tags

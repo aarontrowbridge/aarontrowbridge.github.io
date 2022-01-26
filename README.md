@@ -18,11 +18,14 @@ recently migrated from
   - [x] ghosts, gauges, and generating functionals
   - [x] legendre transformations
   - [x] interactive plotting with Julia 
-- [ ] notes page  
+- [x] notes page  
 - [ ] twitter cards
 - [ ] new blog posts
-  - [ ] jekyll to hugo
   - [ ] GANs
+  - [ ] jekyll to hugo
+  - [ ] information bottleneck problem
+  - [ ] spin 2 particles 
 - [ ] host on github
+- [ ] google analytics
 - [ ] comments
 
