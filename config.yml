@@ -1,4 +1,160 @@
-baseURL: http://example.org/
-languageCode: en-us
-title: My New Hugo Site
-theme: "PaperMod"
+baseURL: "https://aarontrowbridge.github.io/"
+title: Aaron Trowbridge 
+paginate: 25
+theme: PaperMod
+
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+googleAnalytics: UA-123-45
+
+minify:
+    disableXML: true
+    minifyOutput: true
+
+params:
+    env: production # to enable google analytics, opengraph, twitter-cards and schema.
+    title: ExampleSite
+    description: "ExampleSite description"
+    keywords: [Blog, Portfolio, PaperMod]
+    # author: Me
+    # author: ["Me", "You"] # multiple authors
+    images: ["<link or path of image for opengraph, twitter-cards>"]
+    DateFormat: "January 2, 2006"
+    defaultTheme: auto # dark, light
+    disableThemeToggle: false
+
+    math: true
+
+    enableEmoji: true
+
+    ShowReadingTime: true
+    ShowShareButtons: true
+    ShowPostNavLinks: true
+    ShowBreadCrumbs: true
+    ShowCodeCopyButtons: false
+    disableSpecial1stPost: false
+    disableScrollToTop: false
+    comments: false
+    hidemeta: false
+    hideSummary: false
+    showtoc: true 
+    tocopen: false
+
+    assets:
+        disableHLJS: true # to disable highlight.js
+        # disableFingerprinting: true
+        favicon: "<link / abs url>"
+        favicon16x16: "<link / abs url>"
+        favicon32x32: "<link / abs url>"
+        apple_touch_icon: "<link / abs url>"
+        safari_pinned_tab: "<link / abs url>"
+
+    label:
+        text: "Aaron Trowbridge"
+        # icon: ":deciduous_tree:" 
+        iconHeight: 35
+
+    # profile-mode
+    profileMode:
+        enabled: true # needs to be explicitly set
+        title: Aaron's Notebook 
+        subtitle: "writing for learning's sake"
+        imageUrl: "images/profile_pic.jpg"
+        imageWidth: 175
+        imageHeight: 175
+        imageTitle: my image
+        buttons:
+            - name: Resume
+              url: resume.pdf
+            - name: Posts
+              url: posts
+            - name: Tags
+              url: tags
+
+    socialIcons:
+        - name: twitter
+          url: "https://twitter.com/aaron_trow"
+        - name: github
+          url: "https://github.com/aarontrowbridge"
+        - name: linkedin
+          url: "https://www.linkedin.com/in/aaron-j-trowbridge/"
+        - name: email 
+          url: "mailto://aaron.j.trowbridge@gmail.com" 
+
+
+    analytics:
+        google:
+            SiteVerificationTag: "XYZabc"
+        bing:
+            SiteVerificationTag: "XYZabc"
+        yandex:
+            SiteVerificationTag: "XYZabc"
+
+    cover:
+        hidden: false # hide everywhere but not in structured data
+        hiddenInList: false # hide on list pages and home
+        hiddenInSingle: false # hide on single page
+
+    editPost:
+        URL: "https://github.com/<path_to_repo>/content"
+        Text: "Suggest Changes" # edit text
+        appendFilePath: true # to append file path to Edit link
+
+    # for search
+    # https://fusejs.io/api/options.html
+    fuseOpts:
+        isCaseSensitive: false
+        shouldSort: true
+        location: 0
+        distance: 1000
+        threshold: 0.4
+        minMatchCharLength: 0
+        keys: ["title", "permalink", "summary", "content"]
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
+
+
+menu:
+    main:
+        - identifier: posts 
+          name: Posts 
+          url: /posts/
+          weight: 10
+        - identifier: tags
+          name: Tags
+          url: /tags/
+          weight: 20
+        - identifier: categories
+          name: Categories
+          url: /categories/
+          weight: 30
+        - identifier: archive 
+          name: Archive 
+          url: /archives/
+          weight: 40
+        - identifier: notes 
+          name: Notes 
+          url: /notes/ 
+          weight: 50
+        - identifier: search 
+          name: Search 
+          url: /search/ 
+          weight: 60
+ 
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+# pygmentsUseClasses: true
+markup:
+    highlight:
+        # anchorLineNos: true
+        codeFences: true
+        guessSyntax: true
+        # lineNos: true
+        style: monokai
