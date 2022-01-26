@@ -28,7 +28,7 @@ editPost:
 ---
 
 
-So you want to have interactive plots in your blog posts? But you don't want to learn javascript and there wasn't an obvious way to embed matplotlib?  
+So you want inline interactive plots in your blog posts? But you don't want to learn javascript and there wasn't an obvious way to embed matplotlib?  
 
 If your comfortable with (or willing to learn) Julia, there is a simple and elegant solution! [Makie.jl](https://makie.juliaplots.org/stable/) is a julia plotting package with a lot of functionality, including a backend system consisting of [WGLMakie and JSServe](https://makie.juliaplots.org/stable/documentation/backends_and_output/wglmakie/) which provides a way to embed makie plots---including 3d visualizations---right into html and inserted into markdown jekyll blog posts.
 
@@ -69,6 +69,9 @@ which outputs:
 
 Using a mouse or touchpad, the figure can be rotated and zoomed. Pretty cool eh?
 
+> * click and drag to rotate
+> * mouse wheel or 2 fingers on track pad to zoom
+
 This script works by converting the makie `fig` into an html blob that is written into `output_file`   
 <br>
 
@@ -89,14 +92,14 @@ set_theme!(theme_dark())
 radial_sinc(x, y, a) = sinc(a * hypot(x, y)) 
 
 # domain of surface
-xs = LinRange(-5, 5, 200)
-ys = LinRange(-5, 5, 200)
+xs = LinRange(-5, 5, 150)
+ys = LinRange(-5, 5, 150)
 
 # creating the javascript app
 app = App() do session::Session
 
     # create the slider
-    scale_slider = Slider(0.1:0.1:3)
+    scale_slider = Slider(1:3)
 
     # map slider values to surface states
     states = map(scale_slider) do a
