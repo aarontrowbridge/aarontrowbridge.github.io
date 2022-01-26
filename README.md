@@ -9,7 +9,7 @@ recently migrated from
 ## migration TODO:
 
 - [x] settle post archetype 
-- [ ] reformat migrated blog posts
+- [x] reformat migrated blog posts
   - [x] me and my goals
   - [x] the freeman method
   - [x] pseudovectors
@@ -17,7 +17,7 @@ recently migrated from
   - [x] the central identity of QFT
   - [x] ghosts, gauges, and generating functionals
   - [x] legendre transformations
-  - [ ] interactive plotting with Julia 
+  - [x] interactive plotting with Julia 
 - [ ] notes page  
 - [ ] twitter cards
 - [ ] new blog posts
