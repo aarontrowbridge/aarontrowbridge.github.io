@@ -2,7 +2,7 @@
 title: "Notes" # in any language you want
 layout: "notes" # is necessary
 description: "a collection of notes, slides, and other documents"
-date: 2022-01-26
+date: 2022-01-26T10:17:17-05:00
 ---
 
 ## Physics
