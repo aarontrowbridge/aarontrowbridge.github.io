@@ -9,11 +9,11 @@
       <link>https://aarontrowbridge.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 19 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/tags/stochastic-processes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Aug 2021 10:17:17 -0500</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/tags/stochastic-processes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>the Heston stochastic volatility model</title>
       <link>https://aarontrowbridge.github.io/posts/the-heston-model/</link>
-      <pubDate>Thu, 19 Aug 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Aug 2021 10:17:17 -0500</pubDate>
       
       <guid>https://aarontrowbridge.github.io/posts/the-heston-model/</guid>
       <description>an overview of a relatively modern and sophisticated model for pricing financial derivatives</description>

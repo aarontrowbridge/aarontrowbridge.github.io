@@ -9,11 +9,11 @@
       <link>https://aarontrowbridge.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 09 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/categories/physics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Dec 2021 10:17:17 -0500</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/categories/physics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Legendre transformations</title>
       <link>https://aarontrowbridge.github.io/posts/legendre-transformations/</link>
-      <pubDate>Thu, 09 Dec 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 09 Dec 2021 10:17:17 -0500</pubDate>
       
       <guid>https://aarontrowbridge.github.io/posts/legendre-transformations/</guid>
       <description>a discussion of the Legendre transformation and its applications to physics</description>
@@ -22,7 +22,7 @@
     <item>
       <title>ghosts, gauges, and generating functionals</title>
       <link>https://aarontrowbridge.github.io/posts/ghosts-gauges-and-generating-functionals/</link>
-      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 31 Oct 2021 10:17:17 -0500</pubDate>
       
       <guid>https://aarontrowbridge.github.io/posts/ghosts-gauges-and-generating-functionals/</guid>
       <description>a derivation of the gauge fixed Yang-Mills generating functional, with ghosts</description>
@@ -31,7 +31,7 @@
     <item>
       <title>the central identity of quantum field theory</title>
       <link>https://aarontrowbridge.github.io/posts/central-identity-of-QFT/</link>
-      <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 10 Sep 2021 10:17:17 -0500</pubDate>
       
       <guid>https://aarontrowbridge.github.io/posts/central-identity-of-QFT/</guid>
       <description>a derivation of a generating functional identity used for calculating correlators</description>
@@ -40,7 +40,7 @@
     <item>
       <title>pseudovectors</title>
       <link>https://aarontrowbridge.github.io/posts/pseudovectors/</link>
-      <pubDate>Sun, 13 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 13 Jun 2021 10:17:17 -0500</pubDate>
       
       <guid>https://aarontrowbridge.github.io/posts/pseudovectors/</guid>
       <description>a look a the properties of pseudovectors</description>

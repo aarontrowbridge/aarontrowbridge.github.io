@@ -22,7 +22,7 @@
     <item>
       <title>using Julia to do web based interactive plotting</title>
       <link>https://aarontrowbridge.github.io/posts/interactive-julia-plotting/</link>
-      <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 20 Dec 2021 10:17:17 -0500</pubDate>
       
       <guid>https://aarontrowbridge.github.io/posts/interactive-julia-plotting/</guid>
       <description>a tutorial for setting up web based interactive plots, using Julia and Makie.jl</description>
