@@ -19,7 +19,7 @@ params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
     title: Aaron Trowbridge 
     description: "my digital notebook"
-    keywords: [Blog, Portfolio]
+    # keywords: [Blog, Portfolio]
     # author: Me
     # author: ["Me", "You"] # multiple authors
     # images: ["<link or path of image for opengraph, twitter-cards>"]
