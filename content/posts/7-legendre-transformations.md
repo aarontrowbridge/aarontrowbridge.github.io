@@ -1,7 +1,7 @@
 ---
 title: "Legendre transformations"
 url: "posts/legendre-transformations"
-date: 2021-12-09 
+date: 2021-12-09T10:17:17-05:00 
 description: "a discussion of the Legendre transformation and its applications to physics"
 tags: ["mathematical methods", "convex analysis", "analytical mechanics"]
 categories: ["mathematics", "physics"] 

@@ -1,7 +1,7 @@
 ---
 title: "ghosts, gauges, and generating functionals"
 url: "posts/ghosts-gauges-and-generating-functionals"
-date: 2021-10-31 
+date: 2021-10-31T10:17:17-05:00 
 description: "a derivation of the gauge fixed Yang-Mills generating functional, with ghosts"
 tags: ["gauge theory", "quantum field theory", "path integrals"]
 categories: ["physics"] 

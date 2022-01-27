@@ -1,7 +1,7 @@
 ---
 title: "the central identity of quantum field theory"
 url: "posts/central-identity-of-QFT"
-date: 2021-09-10 
+date: 2021-09-10T10:17:17-05:00 
 description: "a derivation of a generating functional identity used for calculating correlators"
 tags: ["quantum field theory", "mathematical methods", "path integrals"]
 categories: ["physics", "mathematics"] 

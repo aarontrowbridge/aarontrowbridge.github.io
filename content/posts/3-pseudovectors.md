@@ -1,7 +1,7 @@
 ---
 title: "pseudovectors"
 url: "posts/pseudovectors"
-date: 2021-06-13 
+date: 2021-06-13T10:17:17-05:00 
 description: "a look a the properties of pseudovectors"
 tags: ["linear algebra", "tensors", "group theory", "analytical mechanics"]
 categories: ["mathematics", "physics"] 

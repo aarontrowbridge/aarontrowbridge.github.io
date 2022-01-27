@@ -1,7 +1,7 @@
 ---
 title: "using Julia to do web based interactive plotting"
 url: "posts/interactive-julia-plotting"
-date: 2021-12-20 
+date: 2021-12-20T10:17:17-05:00 
 description: "a tutorial for setting up web based interactive plots, using Julia and Makie.jl"
 tags: ["julia", "web development", "data visualization"]
 categories: ["computer science"] 

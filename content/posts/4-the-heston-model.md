@@ -1,7 +1,7 @@
 ---
 title: "the Heston stochastic volatility model"
 url: "posts/the-heston-model"
-date: 2021-08-19 
+date: 2021-08-01T10:17:17-05:00 
 description: "an overview of a relatively modern and sophisticated model for pricing financial derivatives"
 tags: ["mathematical finance", "stochastic processes", "optimization", "numerical methods"]
 categories: ["mathematics"] 
@@ -185,7 +185,7 @@ $$
 H_{jk}(r_i) = \frac{\partial^2r_i}{\partial \theta_j \partial \theta_k}.
 $$
 
-For details of the calculation of $\nabla C(\theta; K, T)$ needed in the implementation of the optimization algorithm described below see Theorem 1 in the paper by Cui et al.[^2]  As can be inferred from the form of the characteristic function it is not clean!
+For details of the calculation of $\nabla C(\theta; K, T)$ needed in the implementation of the optimization algorithm described below see Theorem 1 in the paper by Cui et al.  As can be inferred from the form of the characteristic function it is not clean!
 
 ### The Levenberg-Marquardt Method
 
