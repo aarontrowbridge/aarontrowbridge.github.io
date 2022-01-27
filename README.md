@@ -4,7 +4,7 @@ my blog, aka my digital notebook
 
 based on [PaperMod](https://github.com/adityatelange/hugo-PaperMod) hugo blog template
 
-recently migrated from 
+recently migrated from jekyll 
 
 ## migration TODO:
 
