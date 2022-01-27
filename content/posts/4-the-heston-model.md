@@ -185,7 +185,7 @@ $$
 H_{jk}(r_i) = \frac{\partial^2r_i}{\partial \theta_j \partial \theta_k}.
 $$
 
-For details of the calculation of $\nabla C(\theta; K, T)$ needed in the implementation of the optimization algorithm described below see Theorem 1 in the paper by Cui et al. {% cite cui2016fast %} As can be inferred from the form of the characteristic function it is not clean!
+For details of the calculation of $\nabla C(\theta; K, T)$ needed in the implementation of the optimization algorithm described below see Theorem 1 in the paper by Cui et al.[^2]  As can be inferred from the form of the characteristic function it is not clean!
 
 ### The Levenberg-Marquardt Method
 
