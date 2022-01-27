@@ -64,8 +64,8 @@ params:
         title: Aaron's Notebook 
         subtitle: "writing for learning's sake"
         imageUrl: "images/profile_pic.jpg"
-        imageWidth: 175
-        imageHeight: 175
+        imageWidth: 185
+        imageHeight: 185
         imageTitle: my image
         buttons:
             - name: Resume
