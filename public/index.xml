@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>Notes</title>
+      <link>https://aarontrowbridge.github.io/notes/</link>
+      <pubDate>Wed, 26 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/notes/</guid>
+      <description>a collection of notes, slides, and other documents</description>
+    </item>
+    
+    <item>
       <title>using Julia to do web based interactive plotting</title>
       <link>https://aarontrowbridge.github.io/posts/interactive-julia-plotting/</link>
       <pubDate>Mon, 20 Dec 2021 10:17:17 -0500</pubDate>
@@ -91,15 +100,6 @@
       <description>an introduction and outline of my goals for this blog</description>
     </item>
     
-    
-    <item>
-      <title>Notes</title>
-      <link>https://aarontrowbridge.github.io/notes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://aarontrowbridge.github.io/notes/</guid>
-      <description>a collection of notes, slides, and other documents</description>
-    </item>
     
     
   </channel>
