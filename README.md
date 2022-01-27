@@ -7,15 +7,19 @@ based on [PaperMod](https://github.com/adityatelange/hugo-PaperMod) hugo blog te
 recently migrated from jekyll 
 
 
+## future articles
+
+- [ ] GANs
+- [ ] jekyll to hugo
+- [ ] information bottleneck problem
+- [ ] spin 2 particles 
+
 
 ## TODO:
 
 - [ ] twitter cards
+- [ ] link images
 - [ ] new blog posts
-  - [ ] GANs
-  - [ ] jekyll to hugo
-  - [ ] information bottleneck problem
-  - [ ] spin 2 particles 
 - [ ] google analytics
 - [ ] comments
 
