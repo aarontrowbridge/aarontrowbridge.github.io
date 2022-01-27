@@ -68,12 +68,12 @@ params:
         imageHeight: 185
         imageTitle: my image
         buttons:
-            - name: Resume
-              url: documents/resume.pdf
             - name: Posts
               url: posts
-            - name: Tags
-              url: tags
+            - name: Notes 
+              url: notes 
+            - name: Resume
+              url: documents/resume.pdf
 
     socialIcons:
         - name: twitter
