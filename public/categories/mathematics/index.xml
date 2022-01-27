@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>mathematics on Aaron Trowbridge</title>
+    <link>https://aarontrowbridge.github.io/categories/mathematics/</link>
+    <description>Recent content in mathematics on Aaron Trowbridge</description>
+    <image>
+      <url>https://aarontrowbridge.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://aarontrowbridge.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 26 Jan 2022 10:17:17 -0500</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/categories/mathematics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>generative adversarial networks</title>
+      <link>https://aarontrowbridge.github.io/posts/generative-adversarial-nets/</link>
+      <pubDate>Wed, 26 Jan 2022 10:17:17 -0500</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/posts/generative-adversarial-nets/</guid>
+      <description>a look at the theory behind the GAN model and an implementation in Julia using Flux.jl</description>
+    </item>
+    
+    <item>
+      <title>Legendre transformations</title>
+      <link>https://aarontrowbridge.github.io/posts/legendre-transformations/</link>
+      <pubDate>Thu, 09 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/posts/legendre-transformations/</guid>
+      <description>a discussion of the Legendre transformation and its applications to physics</description>
+    </item>
+    
+    <item>
+      <title>the central identity of quantum field theory</title>
+      <link>https://aarontrowbridge.github.io/posts/central-identity-of-QFT/</link>
+      <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/posts/central-identity-of-QFT/</guid>
+      <description>a derivation of a generating functional identity used for calculating correlators</description>
+    </item>
+    
+    <item>
+      <title>the Heston stochastic volatility model</title>
+      <link>https://aarontrowbridge.github.io/posts/the-heston-model/</link>
+      <pubDate>Thu, 19 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/posts/the-heston-model/</guid>
+      <description>an overview of a relatively modern and sophisticated model for pricing financial derivatives</description>
+    </item>
+    
+    <item>
+      <title>pseudovectors</title>
+      <link>https://aarontrowbridge.github.io/posts/pseudovectors/</link>
+      <pubDate>Sun, 13 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/posts/pseudovectors/</guid>
+      <description>a look a the properties of pseudovectors</description>
+    </item>
+    
+  </channel>
+</rss>

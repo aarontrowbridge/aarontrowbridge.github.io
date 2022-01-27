@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>path integrals on Aaron Trowbridge</title>
+    <link>https://aarontrowbridge.github.io/tags/path-integrals/</link>
+    <description>Recent content in path integrals on Aaron Trowbridge</description>
+    <image>
+      <url>https://aarontrowbridge.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://aarontrowbridge.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 31 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/tags/path-integrals/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ghosts, gauges, and generating functionals</title>
+      <link>https://aarontrowbridge.github.io/posts/ghosts-gauges-and-generating-functionals/</link>
+      <pubDate>Sun, 31 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/posts/ghosts-gauges-and-generating-functionals/</guid>
+      <description>a derivation of the gauge fixed Yang-Mills generating functional, with ghosts</description>
+    </item>
+    
+    <item>
+      <title>the central identity of quantum field theory</title>
+      <link>https://aarontrowbridge.github.io/posts/central-identity-of-QFT/</link>
+      <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/posts/central-identity-of-QFT/</guid>
+      <description>a derivation of a generating functional identity used for calculating correlators</description>
+    </item>
+    
+    <item>
+      <title>the Freeman method</title>
+      <link>https://aarontrowbridge.github.io/posts/the-freeman-method/</link>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/posts/the-freeman-method/</guid>
+      <description>an accelerated approach to the Metropolis algorithm for lattice quantum gravity</description>
+    </item>
+    
+  </channel>
+</rss>

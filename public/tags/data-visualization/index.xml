@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>data visualization on Aaron Trowbridge</title>
+    <link>https://aarontrowbridge.github.io/tags/data-visualization/</link>
+    <description>Recent content in data visualization on Aaron Trowbridge</description>
+    <image>
+      <url>https://aarontrowbridge.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://aarontrowbridge.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 20 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/tags/data-visualization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>using Julia to do web based interactive plotting</title>
+      <link>https://aarontrowbridge.github.io/posts/interactive-julia-plotting/</link>
+      <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/posts/interactive-julia-plotting/</guid>
+      <description>a tutorial for setting up web based interactive plots, using Julia and Makie.jl</description>
+    </item>
+    
+  </channel>
+</rss>
