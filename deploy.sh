@@ -20,7 +20,7 @@ hugo
 echo -e "${green}Committing source files...${nocolor}"
 git add .
 git commit -m "${msg}"
-git push origin master
+git push origin main 
 
 
 # Go To Public folder.
@@ -30,7 +30,7 @@ cd public
 echo -e "${green}Committing public folder...${nocolor}"
 git add .
 git commit -m "${msg}"
-git push origin master
+git push origin main 
 
 # Come Back up to the Project Root
 cd ..
