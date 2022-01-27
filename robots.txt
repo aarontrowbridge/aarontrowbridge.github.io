@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://aarontrowbridge.github.io/sitemap.xml
