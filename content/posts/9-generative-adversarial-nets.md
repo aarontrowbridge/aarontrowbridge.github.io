@@ -5,7 +5,7 @@ date: 2022-01-26T10:17:17-05:00
 description: "a look at the theory behind the GAN model and an implementation in Julia using Flux.jl"
 tags: ["machine learning", "julia", "optimization"]
 categories: ["computer science", "mathematics"] 
-draft: false 
+draft: true 
 showToc: true
 TocOpen: false 
 comments: true 

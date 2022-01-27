@@ -2,40 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://aarontrowbridge.github.io/</loc>
-    <lastmod>2022-01-26T10:17:17-05:00</lastmod>
-  </url><url>
-    <loc>https://aarontrowbridge.github.io/categories/</loc>
-    <lastmod>2022-01-26T10:17:17-05:00</lastmod>
-  </url><url>
-    <loc>https://aarontrowbridge.github.io/categories/computer-science/</loc>
-    <lastmod>2022-01-26T10:17:17-05:00</lastmod>
-  </url><url>
-    <loc>https://aarontrowbridge.github.io/posts/generative-adversarial-nets/</loc>
-    <lastmod>2022-01-26T10:17:17-05:00</lastmod>
-  </url><url>
-    <loc>https://aarontrowbridge.github.io/tags/julia/</loc>
-    <lastmod>2022-01-26T10:17:17-05:00</lastmod>
-  </url><url>
-    <loc>https://aarontrowbridge.github.io/tags/machine-learning/</loc>
-    <lastmod>2022-01-26T10:17:17-05:00</lastmod>
-  </url><url>
-    <loc>https://aarontrowbridge.github.io/categories/mathematics/</loc>
-    <lastmod>2022-01-26T10:17:17-05:00</lastmod>
-  </url><url>
     <loc>https://aarontrowbridge.github.io/notes/</loc>
     <lastmod>2022-01-26T10:17:17-05:00</lastmod>
   </url><url>
-    <loc>https://aarontrowbridge.github.io/tags/optimization/</loc>
-    <lastmod>2022-01-26T10:17:17-05:00</lastmod>
+    <loc>https://aarontrowbridge.github.io/</loc>
+    <lastmod>2021-12-20T10:17:17-05:00</lastmod>
   </url><url>
-    <loc>https://aarontrowbridge.github.io/posts/</loc>
-    <lastmod>2022-01-26T10:17:17-05:00</lastmod>
+    <loc>https://aarontrowbridge.github.io/categories/</loc>
+    <lastmod>2021-12-20T10:17:17-05:00</lastmod>
   </url><url>
-    <loc>https://aarontrowbridge.github.io/tags/</loc>
-    <lastmod>2022-01-26T10:17:17-05:00</lastmod>
+    <loc>https://aarontrowbridge.github.io/categories/computer-science/</loc>
+    <lastmod>2021-12-20T10:17:17-05:00</lastmod>
   </url><url>
     <loc>https://aarontrowbridge.github.io/tags/data-visualization/</loc>
+    <lastmod>2021-12-20T10:17:17-05:00</lastmod>
+  </url><url>
+    <loc>https://aarontrowbridge.github.io/tags/julia/</loc>
+    <lastmod>2021-12-20T10:17:17-05:00</lastmod>
+  </url><url>
+    <loc>https://aarontrowbridge.github.io/posts/</loc>
+    <lastmod>2021-12-20T10:17:17-05:00</lastmod>
+  </url><url>
+    <loc>https://aarontrowbridge.github.io/tags/</loc>
     <lastmod>2021-12-20T10:17:17-05:00</lastmod>
   </url><url>
     <loc>https://aarontrowbridge.github.io/posts/interactive-julia-plotting/</loc>
@@ -54,6 +42,9 @@
     <lastmod>2021-12-09T10:17:17-05:00</lastmod>
   </url><url>
     <loc>https://aarontrowbridge.github.io/tags/mathematical-methods/</loc>
+    <lastmod>2021-12-09T10:17:17-05:00</lastmod>
+  </url><url>
+    <loc>https://aarontrowbridge.github.io/categories/mathematics/</loc>
     <lastmod>2021-12-09T10:17:17-05:00</lastmod>
   </url><url>
     <loc>https://aarontrowbridge.github.io/categories/physics/</loc>
@@ -78,6 +69,9 @@
     <lastmod>2021-08-01T10:17:17-05:00</lastmod>
   </url><url>
     <loc>https://aarontrowbridge.github.io/tags/numerical-methods/</loc>
+    <lastmod>2021-08-01T10:17:17-05:00</lastmod>
+  </url><url>
+    <loc>https://aarontrowbridge.github.io/tags/optimization/</loc>
     <lastmod>2021-08-01T10:17:17-05:00</lastmod>
   </url><url>
     <loc>https://aarontrowbridge.github.io/tags/stochastic-processes/</loc>
