@@ -12,7 +12,9 @@ recently migrated from jekyll
 - [ ] GANs
 - [ ] jekyll to hugo
 - [ ] information bottleneck problem
-- [ ] spin 2 particles 
+- [ ] spin 2 particles
+- [ ] VAEs (in python) 
+
 
 
 ## TODO:
