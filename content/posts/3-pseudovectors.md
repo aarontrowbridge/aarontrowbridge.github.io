@@ -179,8 +179,8 @@ $$
 This definition may appear familiar - it is the formula for the *oriented* volume of a parallelepiped, formed by 3 vectors in $\mathbb{R}^3$.  With this definition in hand, as well as an orthonormal basis $\{ e_i \}$ we can now define the Levi-Civita symbol,
 
 $$
-\epsilon_{ijk} \equiv \epsilon(e_i, e_j, e_k) = \left\\{ \begin{array}{cl} +1 & \text{if } \\{i, j, k\\} \text{ is a cyclic permutation of } \\{1, 2, 3\\}\\\\\\
--1 & \text{if } \\{i, j, k\\} \text{ is an anticyclic permutation of } \\{1, 2, 3\\}\\\\\\
+\epsilon_{ijk} \equiv \epsilon(e_i, e_j, e_k) = \left\\{ \begin{array}{cl} +1 & \text{if } (i, j, k) \text{ is a cyclic permutation of } (1, 2, 3)\\\\\\
+-1 & \text{if } (i, j, k) \text{ is an anticyclic permutation of } (1, 2, 3) \\\\\\
 0 & \text{otherwise} \end{array} \right.
 $$
 
