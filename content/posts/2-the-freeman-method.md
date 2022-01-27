@@ -1,7 +1,7 @@
 ---
 title: "the Freeman method"
 url: "posts/the-freeman-method"
-date: 2021-06-09 
+date: 2021-06-09T10:17:17-05:00 
 description: "an accelerated approach to the Metropolis algorithm for lattice quantum gravity"
 tags: ["quantum gravity", "numerical methods", "path integrals"]
 categories: ["physics", "computer science"] 

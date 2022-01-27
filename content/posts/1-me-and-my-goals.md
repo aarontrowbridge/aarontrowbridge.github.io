@@ -1,7 +1,7 @@
 ---
 title: "me and my goals"
 url: "posts/me-and-my-goals"
-date: 2021-06-01
+date: 2021-06-01T10:17:17-05:00
 description: "an introduction and outline of my goals for this blog"
 tags: []
 categories: 
