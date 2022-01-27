@@ -19,7 +19,6 @@ recently migrated from jekyll
 
 - [ ] twitter cards
 - [ ] link images
-- [ ] new blog posts
 - [ ] google analytics
 - [ ] comments
 
