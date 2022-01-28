@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Pages on Aaron Trowbridge</title>
+    <link>https://aarontrowbridge.github.io/pages/</link>
+    <description>Recent content in Pages on Aaron Trowbridge</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 26 Jan 2022 10:17:17 -0500</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notes</title>
+      <link>https://aarontrowbridge.github.io/pages/notes/</link>
+      <pubDate>Wed, 26 Jan 2022 10:17:17 -0500</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/pages/notes/</guid>
+      <description>a collection of notes, slides, and other documents</description>
+    </item>
+    
+    
+    
+  </channel>
+</rss>
