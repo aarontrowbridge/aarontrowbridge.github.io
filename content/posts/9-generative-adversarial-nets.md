@@ -27,7 +27,7 @@ editPost:
     appendFilePath: true # to append file path to Edit link
 ---
 
-In 2014 Ian Goodfellow, then at OpenAI, published his seminal paper, titled "Generative Adversarial Networks", detailing how competition between *generator* and *discriminator* functions, approximated by neural networks, can train the generator to produce realistic images.
+In 2014, Ian Goodfellow, then at OpenAI, published his seminal paper, titled "Generative Adversarial Networks"[^1], detailing how competition between *generator* and *discriminator* functions, approximated by neural networks, can train the generator to produce realistic images.
  
 In this article I will be discussing the theory behind this idea, my own implementation in Julia (mirroring the network structure in Goodfellow's original paper), and show some of the images I was able to get out.
  
@@ -39,7 +39,7 @@ We will also model the discriminator as a parametrized function $D(x; \omega)$ w
  
 In practice, $D$ and $G$ are usually both implemented as neural networks, either fully connected multi-layer perceptrons (MLPs) or convolutional and "deconvolutional".  
  
-> **Deconvolutional layers**, also called convolutional transpose layers, "upsample" from a lower dimensional space to a higher dimensional space, and while the term is sometimes used, it implies an inverse to a convolutional layer, which it is not. The alternative name (convolutional transpose) is more apt and more frequently used lately -- at least Flux.jl implements a [`ConvTranspose`](https://fluxml.ai/Flux.jl/stable/models/layers/#Flux.ConvTranspose) layer. 
+> **Deconvolutional layers**, also called convolutional transpose layers, "upsample" from a lower dimensional space to a higher dimensional space, and while the term is sometimes used, it implies an inverse to a convolutional layer, which it is not. The alternative name (convolutional transpose) is more apt and more frequently used lately -- at least [Flux.jl](https://fluxml.ai/Flux.jl/stable/models/layers/#Flux.ConvTranspose) implements a  `ConvTranspose` layer. 
  
 ### training
  
@@ -51,8 +51,7 @@ $$
  
 Here, $1 - D(G(z))$ is the probability that a generated image is fake, which we want to minimize w.r.t. $G$, while simultaneously maximizing $D$'s ability to tell real from fake.
  
-Thus we can iteratively update $G$ and $D$ by gradient descent in turn.  
- 
+Thus we can iteratively update $G$ and $D$ by gradient descent in turn, using minibatch stochastic gradient descent, see al
  
 ## implementation
 
@@ -63,3 +62,7 @@ Thus we can iteratively update $G$ and $D$ by gradient descent in turn.
 
  
 ## results
+
+## references
+
+[^1]: Goodfellow et al. (2014) "Generative Adversarial Networks" [arXiv:1406.2661](https://arxiv.org/pdf/1406.2661.pdf)
