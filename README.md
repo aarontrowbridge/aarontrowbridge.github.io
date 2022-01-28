@@ -9,11 +9,13 @@ recently migrated from jekyll
 
 ## future articles
 
-- [ ] GANs
+- [ ] generative adversarial networks 
 - [ ] jekyll to hugo
 - [ ] information bottleneck problem
+- [ ] strings in julia vs python
 - [ ] spin 2 particles
-- [ ] VAEs (in python) 
+- [ ] VAEs with python and keras 
+- [ ] ArtGAN
 
 
 
