@@ -61,11 +61,11 @@ params:
     # profile-mode
     profileMode:
         enabled: true # needs to be explicitly set
-        title: Aaron's Notebook 
+        title: My Blog 
         subtitle: "writing for learning's sake"
         imageUrl: "images/profile_pic.jpg"
-        imageWidth: 185
-        imageHeight: 185
+        imageWidth: 200 
+        imageHeight: 200 
         imageTitle: my image
         buttons:
             - name: Posts
