@@ -11,9 +11,10 @@ recently migrated from jekyll
 
 - [ ] generative adversarial networks 
 - [ ] jekyll to hugo
+- [ ] spin 2 particles
+- [ ] conditional GAN
 - [ ] information bottleneck problem
 - [ ] strings in julia vs python
-- [ ] spin 2 particles
 - [ ] VAEs with python and keras 
 - [ ] ArtGAN
 
