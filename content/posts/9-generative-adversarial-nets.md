@@ -140,6 +140,7 @@ The following are randomly sampled outputs from generators trained with differen
 
 **fully connected network** ([code](https://github.com/aarontrowbridge/FluxGAN.jl/blob/main/scripts/mnist_goodfellow.jl)) 
 
+
 ![](/images/GANs/MLP_n_50000_m_100_grid_5_5.png)
 
 ### CIFAR-10

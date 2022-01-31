@@ -16,7 +16,7 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true 
 cover:
-    image: "images/simplex_lattice.png" # image path/url
+    image: "images/freeman_method/simplex_lattice.png" # image path/url
     alt: "alt" # alt text
     caption: "dynamical triangulation configurations" # display caption under cover
     relative: false # when using page bundles set this to true

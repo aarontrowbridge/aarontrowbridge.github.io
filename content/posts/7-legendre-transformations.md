@@ -16,7 +16,7 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true 
 cover:
-    image: "images/legendre_cover.png" # image path/url
+    image: "images/legendre_transformations/legendre_cover.png" # image path/url
     alt: "<alt text>" # alt text
     caption: "Legendre transformation visualization" # display caption under cover
     relative: false # when using page bundles set this to true
