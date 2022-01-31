@@ -11,7 +11,7 @@
 <meta name=google-site-verification content="XYZabc">
 <meta name=yandex-verification content="XYZabc">
 <meta name=msvalidate.01 content="XYZabc">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.4b54530d30efae64eba84ee206079ce1207bf622508462734d7ccd0adf8874ce.css integrity="sha256-S1RTDTDvrmTrqE7iBgec4SB79iJQhGJzTXzNCt+IdM4=" rel="preload stylesheet" as=style>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.49c34b4b657358eeed1bdcae0ae7521b7d56c54efbe06e37c40b9f313dc02891.css integrity="sha256-ScNLS2VzWO7tG9yuCudSG31WxU774G43xAufMT3AKJE=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://aarontrowbridge.github.io/%3Clink%20/%20abs%20url%3E>
 <link rel=icon type=image/png sizes=16x16 href=https://aarontrowbridge.github.io/%3Clink%20/%20abs%20url%3E>
 <link rel=icon type=image/png sizes=32x32 href=https://aarontrowbridge.github.io/%3Clink%20/%20abs%20url%3E>
@@ -19,7 +19,7 @@
 <link rel=mask-icon href=https://aarontrowbridge.github.io/%3Clink%20/%20abs%20url%3E>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.0">
+<meta name=generator content="Hugo 0.92.1">
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
@@ -31,15 +31,16 @@
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script><meta property="og:title" content="generative adversarial networks">
 <meta property="og:description" content="a look at the theory behind the GAN model and an implementation in Julia using Flux.jl">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://aarontrowbridge.github.io/posts/generative-adversarial-nets/"><meta property="og:image" content="https://aarontrowbridge.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://aarontrowbridge.github.io/posts/generative-adversarial-nets/">
+<meta property="og:image" content="https://aarontrowbridge.github.io/images/GANs/cover.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2022-01-26T10:17:17-05:00">
-<meta property="article:modified_time" content="2022-01-26T10:17:17-05:00"><meta property="og:site_name" content="ExampleSite">
+<meta property="article:modified_time" content="2022-01-26T10:17:17-05:00"><meta property="og:site_name" content="Aaron Trowbridge">
 <meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://aarontrowbridge.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E">
+<meta name=twitter:image content="https://aarontrowbridge.github.io/images/GANs/cover.png">
 <meta name=twitter:title content="generative adversarial networks">
 <meta name=twitter:description content="a look at the theory behind the GAN model and an implementation in Julia using Flux.jl">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://aarontrowbridge.github.io/posts/"},{"@type":"ListItem","position":2,"name":"generative adversarial networks","item":"https://aarontrowbridge.github.io/posts/generative-adversarial-nets/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"generative adversarial networks","name":"generative adversarial networks","description":"a look at the theory behind the GAN model and an implementation in Julia using Flux.jl","keywords":["machine learning","julia","optimization"],"articleBody":"In 2014 Ian Goodfellow, then at OpenAI, published his seminal paper, titled “Generative Adversarial Networks”, detailing how competition between generator and discriminator functions, approximated by neural networks, can train the generator to produce realistic images.\nIn this article I will be discussing the theory behind this idea, my own implementation in Julia (mirroring the network structure in Goodfellow’s original paper), and show some of the images I was able to get out.\ntheory To begin with let’s model our generator as a parameterized function $G(z; \\theta)$ that outputs images that are the same size as the data; this function is over a lower dimensional latent space, which we assign a prior distribution $p_z(z)$.\nWe will also model the discriminator as a parametrized function $D(x; \\omega)$ which takes in an image $x$ and outputs a single scalar interpreted as the probability of $x$ being in the training data set.\nIn practice, $D$ and $G$ are usually both implemented as neural networks, either fully connected multi-layer perceptrons (MLPs) or convolutional and “deconvolutional”.\n Deconvolutional layers, also called convolutional transpose layers, “upsample” from a lower dimensional space to a higher dimensional space, and while the term is sometimes used, it implies an inverse to a convolutional layer, which it is not. The alternative name (convolutional transpose) is more apt and more frequently used lately – at least Flux.jl implements a ConvTranspose  layer.\n training At a high level, in training these networks, we want $D$ to accurately tell a real image from a fake image and we want $G$ to trick $D$ into believing the generated images are real. This results in the minimax optimization problem:\n$$ \\min_G \\max_D \\ \\mathbb{E}_{x \\sim p_{data}(x)}\\left[\\log D(x)\\right] + \\mathbb{E}_{z \\sim p_z(z)} \\left[ \\log\\left(1 - D(G(z)) \\right)\\right] $$\nHere, $1 - D(G(z))$ is the probability that a generated image is fake, which we want to minimize w.r.t. $G$, while simultaneously maximizing $D$’s ability to tell real from fake.\nThus we can iteratively update $G$ and $D$ by gradient descent in turn.\nimplementation MNIST CIFAR-10 results ","wordCount":"336","inLanguage":"en","datePublished":"2022-01-26T10:17:17-05:00","dateModified":"2022-01-26T10:17:17-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://aarontrowbridge.github.io/posts/generative-adversarial-nets/"},"publisher":{"@type":"Organization","name":"Aaron Trowbridge","logo":{"@type":"ImageObject","url":"https://aarontrowbridge.github.io/%3Clink%20/%20abs%20url%3E"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"generative adversarial networks","name":"generative adversarial networks","description":"a look at the theory behind the GAN model and an implementation in Julia using Flux.jl","keywords":["machine learning","julia","optimization"],"articleBody":"In 2014, Ian Goodfellow, then at OpenAI, published his seminal paper, titled “Generative Adversarial Networks”1, detailing how competition between generator and discriminator functions, approximated by neural networks, can train the generator to produce realistic images.\nIn this article I will be discussing the theory behind this idea, my own implementation in Julia (mirroring the network structure in Goodfellow’s original paper), and show some of the images I was able to get out.\ntheory To begin with let’s model our generator as a parameterized function $G(z; \\theta)$ that outputs images that are the same size as the data; this function is over a lower dimensional latent space, which we assign a prior distribution $p_z(z)$.\nWe will also model the discriminator as a parametrized function $D(x; \\omega)$ which takes in an image $x$ and outputs a single scalar interpreted as the probability of $x$ being in the training data set.\nIn practice, $D$ and $G$ are usually both implemented as neural networks, either fully connected multi-layer perceptrons (MLPs) or convolutional and “deconvolutional”.\n Deconvolutional layers, also called convolutional transpose layers, “upsample” from a lower dimensional space to a higher dimensional space, and while the term is sometimes used, it implies an inverse to a convolutional layer, which it is not. The alternative name (convolutional transpose) is more apt and more frequently used lately – at least Flux.jl  implements a ConvTranspose layer.\n the minimax problem At a high level, in training these networks, we want $D$ to accurately tell a real image from a fake image and we want $G$ to trick $D$ into believing the generated images are real. This results in the minimax optimization problem:\n$$ \\begin{equation} \\min_G \\max_D \\ \\mathbb{E}_{x \\sim p_{data}(x)}\\left[\\log D(x)\\right] + \\mathbb{E}_{z \\sim p_z(z)} \\left[ \\log\\left(1 - D(G(z)) \\right)\\right] \\end{equation} $$\nHere, $1 - D(G(z))$ is the probability that a generated image is fake, which we want to minimize w.r.t. $G$, while simultaneously maximizing $D$’s ability to tell real from fake.\nUsing the value function in (1), denoted $V(G, D)$, we can iteratively update $G$ and $D$, in turn, using minibatch stochastic gradient descent; see below or Algorithm 1 in [Goodfellow et al.] for details.\nglobal optimality Ultimately, we want the distribution of generated images to match the data distribution, i.e., $p_g = p_{\\text{data}}$.\nFor any fixed (suboptimal) generator $G$ we want to find $D^*_G(x)$ which maximizes $V$:\n$$ \\begin{align} V(G, D) \u0026= \\int_x p_{\\text{data}}(x) \\log(D(x)) \\ \\mathrm{d}x + \\int_z p_{z}(z) \\log(1 - D(G(z))) \\ \\mathrm{d}z \\nonumber \\\\\\ \u0026= \\int_x p_{\\text{data}}(x) \\log(D(x)) + p_{g}(x) \\log(1 - D(x)) \\ \\mathrm{d}x \\end{align} $$\nThe integrand of (2), which has the form $y \\to a \\log y + b \\log(1 - y)$ with $(a, b) \\in \\mathbb{R}^2 \\backslash \\{0,0\\}$ with a maximum in $[0,1]$ at $a \\over a+b$. So we then have\n$$ \\begin{equation} D^*_G(x) = \\frac{p_{\\text{data}}(x)}{p_{\\text{data}}(x) + p_g(x)} \\end{equation} $$\nNow, looking back at (1) we can see that we need to minimize\n$$ \\begin{align} C(G) \u0026= \\max_D V(G, D) = V(G, D^*_G) \\nonumber \\\\\\ \u0026= \\mathbb{E}_{x \\sim p_{\\text{data}}}[\\log D^*_G(x)] + \\mathbb{E}_{z \\sim p_z}[\\log(1 - D^*_G(G(z))] \\nonumber \\\\\\ \u0026= \\mathbb{E}_{x \\sim p_{\\text{data}}}[\\log D^*_G(x)] + \\mathbb{E}_{x \\sim p_g}[\\log(1 - D^*_G(x))] \\nonumber \\\\\\ \u0026= \\mathbb{E}_{x \\sim p_{\\text{data}}}\\left[\\log \\frac{p_{\\text{data}}(x)}{p_{\\text{data}}(x) + p_g(x)} \\right] + \\mathbb{E}_{x \\sim p_g}\\left[\\log \\frac{p_g(x)}{p_{\\text{data}}(x) + p_g(x)} \\right] \\end{align} $$\nWith equation (3) we can clearly see that $D^*_G(x) = {1 \\over 2}$ when $p_g = p_{\\text{data}}$, which implies that at its absolute minimum\n$$ C(G^*) = \\mathbb{E}_{x \\sim p_{\\text{data}}}[-\\log 2] + \\mathbb{E}_{x \\sim p_g}[-\\log 2] = -\\log 4. $$\n We now note that the Kullback-Leibler divergence  is defined as\n$$ \\begin{align*} D_{KL}(p \\ \\Vert \\ q) \u0026\\equiv \\int_x p(x) \\log {p(x) \\over q(x)} \\ \\mathrm{d}x \\\\\\ \u0026= \\mathbb{E}_{x \\sim p(x)} \\left[ \\log {p(x) \\over q(x)} \\right] \\end{align*} $$\nand the Jenson-Shannon divergence  , which is symmetric, strictly positive, and $0$ iff the distributions are equal, is defined as\n$$ \\begin{align*} D_{JS}(p \\ \\Vert \\ q) \u0026\\equiv {1 \\over 2}D_{KL}\\left(p \\ \\Bigg\\Vert \\ {p + q \\over 2} \\right) + {1 \\over 2}D_{KL}\\left(q \\ \\Bigg\\Vert \\ {p + q \\over 2} \\right) \\\\\\ \u0026= {1 \\over 2} \\mathbb{E}_{x \\sim p(x)} \\left[ \\log {2 \\ p(x) \\over p(x) + q(x)} \\right] + {1 \\over 2} \\mathbb{E}_{x \\sim q(x)} \\left[ \\log {2 \\ q(x) \\over p(x) + q(x)} \\right] \\\\\\ \u0026= {1 \\over 2} \\left( \\mathbb{E}_{x \\sim p(x)} \\left[ \\log {p(x) \\over p(x) + q(x)} \\right] + \\mathbb{E}_{x \\sim q(x)} \\left[ \\log {q(x) \\over p(x) + q(x)} \\right] + \\log 4 \\right) \\end{align*} $$\n Thus, using (4), the cost function for the generator $G$, for optimal $D^*_G$, can be written as\n$$ \\begin{equation} C(G) = -\\log 4 + 2 \\cdot D_{JS}(p_{\\text{data}} \\ \\Vert \\ p_g). \\end{equation} $$\noptimization The above analysis shows that our loss for $G$ is well defined when $D$ is close to optimality. In order to get the discriminator to be as close to optimal as possible, we can train it in an inner loop with $k$ updates for ever one update to the generator. This procedure schematically goes as follows:\n Algorithm minibatch SGD training of generative adversarial nets\n  for $n$ iterations:\n for $k$ inner loops:\n sample $m$ noise samples $z_i \\sim p_g(z)$ sample $m$ data samples $x_i \\sim p_{\\text{data}}(x)$ update $D$ to ascend via SGD with $$ \\nabla_\\omega \\ {1 \\over m} \\sum_{i=1}^m \\log D\\left(x_i; \\ \\omega\\right) + \\log \\big( 1 - D(G(z_i; \\ \\theta); \\ \\omega)\\big) $$    sample $m$ noise samples $z_i \\sim p_g(z)$ update $G$ to descend via SGD with $$ \\nabla_\\theta \\ {1 \\over m} \\sum_{i=1}^m \\log \\big( 1 - D(G(z_i; \\ \\theta); \\ \\omega)\\big) $$   The plots below show what the training loss dynamics looks like for different values of $k$:\nexperiments An implementation of the “simple” GAN model described here (plus some more advanced models that aren’t yet implemented at the time of writing this) can be found on github at FluxGAN.jl  . The package runs on the gpu (if available) and can be easily installed and used.\ntraining Visualizing the training of a GAN can be tricky; I found it helpful to make the following gif which shows the generator’s output for specific points in the latent space during the training process.\nThe following are randomly sampled outputs from generators trained with different architectures on different data sets:\nMNIST fully connected network ( code  )\nCIFAR-10 convolutional network ( code  )\nfully connected network ( code  )\n   Goodfellow et al. (2014) “Generative Adversarial Networks” arXiv:1406.2661  ↩︎\n   ","wordCount":"1063","inLanguage":"en","image":"https://aarontrowbridge.github.io/images/GANs/cover.png","datePublished":"2022-01-26T10:17:17-05:00","dateModified":"2022-01-26T10:17:17-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://aarontrowbridge.github.io/posts/generative-adversarial-nets/"},"publisher":{"@type":"Organization","name":"Aaron Trowbridge","logo":{"@type":"ImageObject","url":"https://aarontrowbridge.github.io/%3Clink%20/%20abs%20url%3E"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -96,7 +97,7 @@ generative adversarial networks
 <div class=post-description>
 a look at the theory behind the GAN model and an implementation in Julia using Flux.jl
 </div>
-<div class=post-meta><span title="2022-01-26 10:17:17 -0500 EST">January 26, 2022</span>&nbsp;·&nbsp;2 min&nbsp;|&nbsp;<a href=https://github.com/aarontrowbridge/aarontrowbridge.github.io/content/posts/9-generative-adversarial-nets.md rel="noopener noreferrer" target=_blank>Suggest Changes</a>
+<div class=post-meta><span title="2022-01-26 10:17:17 -0500 EST">January 26, 2022</span>&nbsp;·&nbsp;5 min&nbsp;|&nbsp;<a href=https://github.com/aarontrowbridge/aarontrowbridge.github.io/content/posts/9-generative-adversarial-nets.md rel="noopener noreferrer" target=_blank>Suggest Changes</a>
 </div>
 </header> <div class=toc>
 <details>
@@ -107,46 +108,184 @@ a look at the theory behind the GAN model and an implementation in Julia using F
 <li>
 <a href=#theory aria-label=theory>theory</a><ul>
 <li>
-<a href=#training aria-label=training>training</a></li></ul>
+<a href=#the-minimax-problem aria-label="the minimax problem">the <em>minimax</em> problem</a></li>
+<li>
+<a href=#global-optimality aria-label="global optimality">global optimality</a></li>
+<li>
+<a href=#optimization aria-label=optimization>optimization</a></li></ul>
 </li>
 <li>
-<a href=#implementation aria-label=implementation>implementation</a><ul>
+<a href=#experiments aria-label=experiments>experiments</a><ul>
+<li>
+<a href=#training aria-label=training>training</a></li>
 <li>
 <a href=#mnist aria-label=MNIST>MNIST</a></li>
 <li>
-<a href=#cifar-10 aria-label=CIFAR-10>CIFAR-10</a></li></ul>
+<a href=#cifar-10 aria-label=CIFAR-10>CIFAR-10</a>
 </li>
-<li>
-<a href=#results aria-label=results>results</a>
+</ul>
 </li>
 </ul>
 </div>
 </details>
 </div>
-<div class=post-content><p>In 2014 Ian Goodfellow, then at OpenAI, published his seminal paper, titled &ldquo;Generative Adversarial Networks&rdquo;, detailing how competition between <em>generator</em> and <em>discriminator</em> functions, approximated by neural networks, can train the generator to produce realistic images.</p>
+<div class=post-content><p>In 2014, Ian Goodfellow, then at OpenAI, published his seminal paper, titled &ldquo;Generative Adversarial Networks&rdquo;<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>, detailing how competition between <em>generator</em> and <em>discriminator</em> functions, approximated by neural networks, can train the generator to produce realistic images.</p>
 <p>In this article I will be discussing the theory behind this idea, my own implementation in Julia (mirroring the network structure in Goodfellow&rsquo;s original paper), and show some of the images I was able to get out.</p>
 <h2 id=theory>theory<a hidden class=anchor aria-hidden=true href=#theory>#</a></h2>
 <p>To begin with let&rsquo;s model our generator as a parameterized function $G(z; \theta)$ that outputs images that are the same size as the data; this function is over a lower dimensional latent space, which we assign a prior distribution $p_z(z)$.</p>
 <p>We will also model the discriminator as a parametrized function $D(x; \omega)$ which takes in an image $x$ and outputs a single scalar interpreted as the probability of $x$ being in the training data set.</p>
 <p>In practice, $D$ and $G$ are usually both implemented as neural networks, either fully connected multi-layer perceptrons (MLPs) or convolutional and &ldquo;deconvolutional&rdquo;.</p>
 <blockquote>
-<p><strong>Deconvolutional layers</strong>, also called convolutional transpose layers, &ldquo;upsample&rdquo; from a lower dimensional space to a higher dimensional space, and while the term is sometimes used, it implies an inverse to a convolutional layer, which it is not. The alternative name (convolutional transpose) is more apt and more frequently used lately &ndash; at least Flux.jl implements a
+<p><strong>Deconvolutional layers</strong>, also called convolutional transpose layers, &ldquo;upsample&rdquo; from a lower dimensional space to a higher dimensional space, and while the term is sometimes used, it implies an inverse to a convolutional layer, which it is not. The alternative name (convolutional transpose) is more apt and more frequently used lately &ndash; at least
 <a href=https://fluxml.ai/Flux.jl/stable/models/layers/#Flux.ConvTranspose target=_blank>
-<code>ConvTranspose</code>
+Flux.jl
 </a>
-layer.</p>
+implements a <code>ConvTranspose</code> layer.</p>
 </blockquote>
-<h3 id=training>training<a hidden class=anchor aria-hidden=true href=#training>#</a></h3>
+<h3 id=the-minimax-problem>the <em>minimax</em> problem<a hidden class=anchor aria-hidden=true href=#the-minimax-problem>#</a></h3>
 <p>At a high level, in training these networks, we want $D$ to accurately tell a real image from a fake image and we want $G$ to trick $D$ into believing the generated images are real. This results in the <em>minimax</em> optimization problem:</p>
 <p>$$
+\begin{equation}
 \min_G \max_D \ \mathbb{E}_{x \sim p_{data}(x)}\left[\log D(x)\right] + \mathbb{E}_{z \sim p_z(z)} \left[ \log\left(1 - D(G(z)) \right)\right]
+\end{equation}
 $$</p>
 <p>Here, $1 - D(G(z))$ is the probability that a generated image is fake, which we want to minimize w.r.t. $G$, while simultaneously maximizing $D$&rsquo;s ability to tell real from fake.</p>
-<p>Thus we can iteratively update $G$ and $D$ by gradient descent in turn.</p>
-<h2 id=implementation>implementation<a hidden class=anchor aria-hidden=true href=#implementation>#</a></h2>
+<p>Using the value function in (1), denoted $V(G, D)$, we can iteratively update $G$ and $D$, in turn, using minibatch stochastic gradient descent; see below or Algorithm 1 in [Goodfellow et al.] for details.</p>
+<h3 id=global-optimality>global optimality<a hidden class=anchor aria-hidden=true href=#global-optimality>#</a></h3>
+<p>Ultimately, we want the distribution of generated images to match the data distribution, i.e., $p_g = p_{\text{data}}$.</p>
+<p>For any fixed (suboptimal) generator $G$ we want to find $D^*_G(x)$ which maximizes $V$:</p>
+<p>$$
+\begin{align}
+V(G, D) &= \int_x p_{\text{data}}(x) \log(D(x)) \ \mathrm{d}x + \int_z p_{z}(z) \log(1 - D(G(z))) \ \mathrm{d}z \nonumber \\\
+&= \int_x p_{\text{data}}(x) \log(D(x)) + p_{g}(x) \log(1 - D(x)) \ \mathrm{d}x
+\end{align}
+$$</p>
+<p>The integrand of (2), which has the form $y \to a \log y + b \log(1 - y)$ with $(a, b) \in \mathbb{R}^2 \backslash \{0,0\}$ with a maximum in $[0,1]$ at $a \over a+b$. So we then have</p>
+<p>$$
+\begin{equation}
+D^*_G(x) = \frac{p_{\text{data}}(x)}{p_{\text{data}}(x) + p_g(x)}
+\end{equation}
+$$</p>
+<p>Now, looking back at (1) we can see that we need to minimize</p>
+<p>$$
+\begin{align}
+C(G) &= \max_D V(G, D) = V(G, D^*_G) \nonumber \\\
+&= \mathbb{E}_{x \sim p_{\text{data}}}[\log D^*_G(x)] + \mathbb{E}_{z \sim p_z}[\log(1 - D^*_G(G(z))] \nonumber \\\
+&= \mathbb{E}_{x \sim p_{\text{data}}}[\log D^*_G(x)] + \mathbb{E}_{x \sim p_g}[\log(1 - D^*_G(x))] \nonumber \\\
+&= \mathbb{E}_{x \sim p_{\text{data}}}\left[\log \frac{p_{\text{data}}(x)}{p_{\text{data}}(x) + p_g(x)} \right] + \mathbb{E}_{x \sim p_g}\left[\log \frac{p_g(x)}{p_{\text{data}}(x) + p_g(x)} \right]
+\end{align}
+$$</p>
+<p>With equation (3) we can clearly see that $D^*_G(x) = {1 \over 2}$ when $p_g = p_{\text{data}}$, which implies that at its absolute minimum</p>
+<p>$$
+C(G^*) = \mathbb{E}_{x \sim p_{\text{data}}}[-\log 2] + \mathbb{E}_{x \sim p_g}[-\log 2] = -\log 4.
+$$</p>
+<blockquote>
+<p>We now note that the
+<a href=https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence target=_blank>
+Kullback-Leibler divergence
+</a>
+is defined as</p>
+<p>$$
+\begin{align*}
+D_{KL}(p \ \Vert \ q) &\equiv \int_x p(x) \log {p(x) \over q(x)} \ \mathrm{d}x \\\
+&= \mathbb{E}_{x \sim p(x)} \left[ \log {p(x) \over q(x)} \right]
+\end{align*}
+$$</p>
+<p>and the
+<a href=https://en.wikipedia.org/wiki/Jensen%E2%80%93Shannon_divergence target=_blank>
+Jenson-Shannon divergence
+</a>
+, which is symmetric, strictly positive, and $0$ iff the distributions are equal, is defined as</p>
+<p>$$
+\begin{align*}
+D_{JS}(p \ \Vert \ q) &\equiv {1 \over 2}D_{KL}\left(p \ \Bigg\Vert \ {p + q \over 2} \right) + {1 \over 2}D_{KL}\left(q \ \Bigg\Vert \ {p + q \over 2} \right) \\\
+&= {1 \over 2} \mathbb{E}_{x \sim p(x)} \left[ \log {2 \ p(x) \over p(x) + q(x)} \right] + {1 \over 2} \mathbb{E}_{x \sim q(x)} \left[ \log {2 \ q(x) \over p(x) + q(x)} \right] \\\
+&= {1 \over 2} \left( \mathbb{E}_{x \sim p(x)} \left[ \log {p(x) \over p(x) + q(x)} \right] + \mathbb{E}_{x \sim q(x)} \left[ \log {q(x) \over p(x) + q(x)} \right] + \log 4 \right)
+\end{align*}
+$$</p>
+</blockquote>
+<p>Thus, using (4), the cost function for the generator $G$, for optimal $D^*_G$, can be written as</p>
+<p>$$
+\begin{equation}
+C(G) = -\log 4 + 2 \cdot D_{JS}(p_{\text{data}} \ \Vert \ p_g).
+\end{equation}
+$$</p>
+<h3 id=optimization>optimization<a hidden class=anchor aria-hidden=true href=#optimization>#</a></h3>
+<p>The above analysis shows that our loss for $G$ is well defined when $D$ is close to optimality. In order to get the discriminator to be as close to optimal as possible, we can train it in an inner loop with $k$ updates for ever one update to the generator. This procedure schematically goes as follows:</p>
+<blockquote>
+<p><strong>Algorithm</strong> minibatch SGD training of generative adversarial nets</p>
+</blockquote>
+<blockquote>
+<p><strong>for</strong> $n$ iterations:</p>
+<blockquote>
+<p><strong>for</strong> $k$ inner loops:</p>
+<ul>
+<li>sample $m$ noise samples $z_i \sim p_g(z)$</li>
+<li>sample $m$ data samples $x_i \sim p_{\text{data}}(x)$</li>
+<li>update $D$ to ascend via SGD with
+$$
+\nabla_\omega \ {1 \over m} \sum_{i=1}^m \log D\left(x_i; \ \omega\right) + \log \big( 1 - D(G(z_i; \ \theta); \ \omega)\big)
+$$</li>
+</ul>
+</blockquote>
+<ul>
+<li>sample $m$ noise samples $z_i \sim p_g(z)$</li>
+<li>update $G$ to descend via SGD with
+$$
+\nabla_\theta \ {1 \over m} \sum_{i=1}^m \log \big( 1 - D(G(z_i; \ \theta); \ \omega)\big)
+$$</li>
+</ul>
+</blockquote>
+<p>The plots below show what the training loss dynamics looks like for different values of $k$:</p>
+<p><img loading=lazy src=/images/GANs/loss_for_ks_prototype.png#center alt>
+</p>
+<h2 id=experiments>experiments<a hidden class=anchor aria-hidden=true href=#experiments>#</a></h2>
+<p>An implementation of the &ldquo;simple&rdquo; GAN model described here (plus some more advanced models that aren&rsquo;t yet implemented at the time of writing this) can be found on github at
+<a href=https://github.com/aarontrowbridge/FluxGAN.jl target=_blank>
+FluxGAN.jl
+</a>
+. The package runs on the gpu (if available) and can be easily installed and used.</p>
+<h3 id=training>training<a hidden class=anchor aria-hidden=true href=#training>#</a></h3>
+<p>Visualizing the training of a GAN can be tricky; I found it helpful to make the following gif which shows the generator&rsquo;s output for specific points in the latent space during the training process.</p>
+<p><img loading=lazy src=/images/GANs/mlp_n_15000_grid_5_5.gif#center alt=alt>
+</p>
+<p>The following are randomly sampled outputs from generators trained with different architectures on different data sets:</p>
 <h3 id=mnist>MNIST<a hidden class=anchor aria-hidden=true href=#mnist>#</a></h3>
+<p><strong>fully connected network</strong> (
+<a href=https://github.com/aarontrowbridge/FluxGAN.jl/blob/main/scripts/mnist_goodfellow.jl target=_blank>
+code
+</a>
+)</p>
+<p><img loading=lazy src=/images/GANs/MLP_n_50000_m_100_grid_5_5.png#center alt>
+</p>
 <h3 id=cifar-10>CIFAR-10<a hidden class=anchor aria-hidden=true href=#cifar-10>#</a></h3>
-<h2 id=results>results<a hidden class=anchor aria-hidden=true href=#results>#</a></h2>
+<p><strong>convolutional network</strong> (
+<a href=https://github.com/aarontrowbridge/FluxGAN.jl/blob/main/scripts/cifar10_conv_goodfellow.jl target=_blank>
+code
+</a>
+)</p>
+<p><img loading=lazy src=/images/GANs/animals_conv_n_25000_m_50_grid_5_5.png#center alt>
+</p>
+<p><strong>fully connected network</strong> (
+<a href=https://github.com/aarontrowbridge/FluxGAN.jl/blob/main/scripts/cifar10_mlp_goodfellow.jl target=_blank>
+code
+</a>
+)</p>
+<p><img loading=lazy src=/images/GANs/animals_mlp_n_25000_m_50_grid_5_5.png#center alt>
+</p>
+<h3 id=heading><a hidden class=anchor aria-hidden=true href=#heading>#</a></h3>
+<section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p>Goodfellow et al. (2014) &ldquo;Generative Adversarial Networks&rdquo;
+<a href=https://arxiv.org/pdf/1406.2661.pdf target=_blank>
+arXiv:1406.2661
+</a>
+&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
