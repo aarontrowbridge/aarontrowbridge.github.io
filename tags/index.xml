@@ -5,22 +5,40 @@
     <link>https://aarontrowbridge.github.io/tags/</link>
     <description>Recent content in Tags on Aaron Trowbridge</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 20 Dec 2021 10:17:17 -0500</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>julia</title>
+      <link>https://aarontrowbridge.github.io/tags/julia/</link>
+      <pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/tags/julia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine learning</title>
+      <link>https://aarontrowbridge.github.io/tags/machine-learning/</link>
+      <pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>optimization</title>
+      <link>https://aarontrowbridge.github.io/tags/optimization/</link>
+      <pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/tags/optimization/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>data visualization</title>
       <link>https://aarontrowbridge.github.io/tags/data-visualization/</link>
       <pubDate>Mon, 20 Dec 2021 10:17:17 -0500</pubDate>
       
       <guid>https://aarontrowbridge.github.io/tags/data-visualization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>julia</title>
-      <link>https://aarontrowbridge.github.io/tags/julia/</link>
-      <pubDate>Mon, 20 Dec 2021 10:17:17 -0500</pubDate>
-      
-      <guid>https://aarontrowbridge.github.io/tags/julia/</guid>
       <description></description>
     </item>
     
@@ -102,15 +120,6 @@
       <pubDate>Sun, 01 Aug 2021 10:17:17 -0500</pubDate>
       
       <guid>https://aarontrowbridge.github.io/tags/numerical-methods/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>optimization</title>
-      <link>https://aarontrowbridge.github.io/tags/optimization/</link>
-      <pubDate>Sun, 01 Aug 2021 10:17:17 -0500</pubDate>
-      
-      <guid>https://aarontrowbridge.github.io/tags/optimization/</guid>
       <description></description>
     </item>
     
