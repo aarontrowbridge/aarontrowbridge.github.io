@@ -144,12 +144,13 @@ The above analysis shows that our loss for $G$ is well defined when $D$ is close
 
 The plots below show what the training loss dynamics looks like for different values of $k$:
 
-![](/images/GANs/loss_for_ks_prototype.png#center)
+![alt](/images/GANs/loss_for_ks_prototype.png#center)
 
+We can see that the generator $G$'s loss decays more steeply when $k$ is larger, which is good, but comes at a cost: the computational cost increases steeply.  This trade off should be considered when training.
 
 ## experiments
 
-An implementation of the "simple" GAN model described here (plus some more advanced models that aren't yet implemented at the time of writing this) can be found on github at [FluxGAN.jl](https://github.com/aarontrowbridge/FluxGAN.jl).  The package runs on the gpu (if available) and can be easily installed and used.
+An implementation of the "simple" GAN model described here (plus some more advanced models that aren't yet implemented at the time of writing this) can be found on github at [FluxGAN.jl](https://github.com/aarontrowbridge/FluxGAN.jl).  The package runs on the gpu (if available) and can be easily installed and used.  
 
 ### training
 
@@ -157,7 +158,7 @@ Visualizing the training of a GAN can be tricky; I found it helpful to make the 
 
 ![alt](/images/GANs/mlp_n_15000_grid_5_5.gif#center)
 
-The following are randomly sampled outputs from generators trained with different architectures on different data sets:
+The following are randomly sampled outputs from generators trained with different architectures on different data sets, all with $k=1$.
 
 ### MNIST
 
