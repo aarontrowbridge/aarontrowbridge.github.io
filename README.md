@@ -9,7 +9,7 @@ recently migrated from jekyll
 
 ## future articles
 
-- [ ] generative adversarial networks 
+- [x] generative adversarial networks 
 - [ ] jekyll to hugo
 - [ ] spin 2 particles
 - [ ] conditional GAN
