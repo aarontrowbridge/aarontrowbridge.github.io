@@ -5,7 +5,7 @@ date: 2022-01-26T10:17:17-05:00
 description: "a look at the theory behind the GAN model and an implementation in Julia using Flux.jl"
 tags: ["machine learning", "julia", "optimization"]
 categories: ["computer science", "mathematics"] 
-draft: true 
+draft: false 
 showToc: true
 TocOpen: false 
 comments: true 
@@ -16,7 +16,7 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true 
 cover:
-    # image: "<image path/url>" # image path/url
+    image: "images/GANs/cover.png" # image path/url
     alt: "<alt text>" # alt text
     caption: "<text>" # display caption under cover
     relative: false # when using page bundles set this to true
@@ -53,7 +53,7 @@ $$
  
 Here, $1 - D(G(z))$ is the probability that a generated image is fake, which we want to minimize w.r.t. $G$, while simultaneously maximizing $D$'s ability to tell real from fake.
  
-Using the value function in (1), denoted $V(G, D)$, we can iteratively update $G$ and $D$, in turn, using minibatch stochastic gradient descent; see Algorithm 1 in [Goodfellow et al.] for details.
+Using the value function in (1), denoted $V(G, D)$, we can iteratively update $G$ and $D$, in turn, using minibatch stochastic gradient descent; see below or Algorithm 1 in [Goodfellow et al.] for details.
 
 
 ### global optimality
@@ -104,7 +104,7 @@ $$
 >\end{align*}
 >$$
 >
->and the [Jenson-Shannon divergence](https://en.wikipedia.org/wiki/Jensen%E2%80%93Shannon_divergence), is defined as 
+>and the [Jenson-Shannon divergence](https://en.wikipedia.org/wiki/Jensen%E2%80%93Shannon_divergence), which is symmetric, strictly positive, and $0$ iff the distributions are equal, is defined as 
 >
 >$$
 >\begin{align*}
@@ -122,6 +122,29 @@ C(G) = -\log 4 + 2 \cdot D\_{JS}(p\_{\text{data}} \ \Vert \ p_g).
 \end{equation}
 $$
 
+### optimization
+
+The above analysis shows that our loss for $G$ is well defined when $D$ is close to optimality.  In order to get the discriminator to be as close to optimal as possible, we can train it in an inner loop with $k$ updates for ever one update to the generator. This procedure schematically goes as follows:
+
+>**Algorithm** minibatch SGD training of generative adversarial nets
+
+>**for** $n$ iterations:   
+> >**for** $k$ inner loops: 
+> >* sample $m$ noise samples $z_i \sim p_g(z)$
+> >* sample $m$ data samples $x_i \sim p\_{\text{data}}(x)$
+> >* update $D$ to ascend via SGD with
+> >$$
+> >\nabla\_\omega \ {1 \over m} \sum\_{i=1}^m \log D\left(x_i; \  \omega\right) + \log \big( 1 - D(G(z_i; \ \theta); \ \omega)\big) 
+> >$$  
+>* sample $m$ noise samples $z_i \sim p_g(z)$
+>* update $G$ to descend via SGD with
+>$$
+>\nabla\_\theta \ {1 \over m} \sum\_{i=1}^m \log \big( 1 - D(G(z_i; \ \theta); \ \omega)\big) 
+>$$
+
+The plots below show what the training loss dynamics looks like for different values of $k$:
+
+![](/images/GANs/loss_for_ks_prototype.png#center)
 
 
 ## experiments
@@ -141,17 +164,17 @@ The following are randomly sampled outputs from generators trained with differen
 **fully connected network** ([code](https://github.com/aarontrowbridge/FluxGAN.jl/blob/main/scripts/mnist_goodfellow.jl)) 
 
 
-![](/images/GANs/MLP_n_50000_m_100_grid_5_5.png)
+![](/images/GANs/MLP_n_50000_m_100_grid_5_5.png#center)
 
 ### CIFAR-10
 
 **convolutional network** ([code](https://github.com/aarontrowbridge/FluxGAN.jl/blob/main/scripts/cifar10_conv_goodfellow.jl))
 
-![](/images/GANs/animals_conv_n_25000_m_50_grid_5_5.png)
+![](/images/GANs/animals_conv_n_25000_m_50_grid_5_5.png#center)
 
 **fully connected network** ([code](https://github.com/aarontrowbridge/FluxGAN.jl/blob/main/scripts/cifar10_mlp_goodfellow.jl)) 
 
-![](/images/GANs/animals_mlp_n_25000_m_50_grid_5_5.png)
+![](/images/GANs/animals_mlp_n_25000_m_50_grid_5_5.png#center)
 
 ###
 
