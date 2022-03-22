@@ -10,7 +10,7 @@ recently migrated from jekyll
 ## future articles
 
 - [x] generative adversarial networks 
-- [ ] jekyll to hugo
+- [ ] calibrating the Heston model
 - [ ] spin 2 particles
 - [ ] conditional GAN
 - [ ] information bottleneck problem
