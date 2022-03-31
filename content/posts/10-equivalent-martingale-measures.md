@@ -1,7 +1,7 @@
 ---
 title: "risk neutrality: the equivalent martingale measure"
 url: "posts/equivalent-martingale-measures"
-date: 2022-03-20
+date: 2022-03-31
 description: "an explanation of the risk-neutral measure, a result of Girsanov's theorem, commonly deployed by \"sell-side\" financial institutions to simplify derivative pricing"
 tags: ["mathematical finance", "stochastic processes", "data visualization"]
 categories: ["mathematics"] 
