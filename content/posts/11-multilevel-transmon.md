@@ -27,7 +27,7 @@ editPost:
     appendFilePath: true # to append file path to Edit link
 ---
 
-The *transmon* qubit, first proposed in 2007 by Koch et al. [^1], has become a top contender for realizing large-scale NISQ devices.  This transmon is based on an anharmonic oscillator realized by a Josephson junction shunted by a capacitor. The anharmonicity is important for enabling a stable two-level subsystem where the qubit state will live. 
+The *transmon* qubit, first proposed in 2007 by Koch et al. [^1], has become a top contender for realizing large-scale NISQ devices.  The transmon is based on an anharmonic oscillator realized by a Josephson junction shunted by a capacitor. Anharmonicity --- i.e. unevenly separated energy levels, c.f. the harmonic oscillator --- is the key ingredient enabling a stable two-level subsystem where the qubit state will live. 
 
 The circuit diagram (taken from [^1]) is shown below. 
 
@@ -65,8 +65,111 @@ $$
 
 where $\omega = \sqrt{8E_J E_C}$ is the resonant frequency of the oscillator and $\delta = -E_C$ is the anharmonicity.
 
+At this point in the derivation of the typical transmon Hamiltonian, a lot of handwaving is used to disappear a number of terms in (3), using the *rotating wave approximation* (RWA) as justification.  The resulting Hamiltonian is
+
+$$
+\begin{equation}
+\boxed{
+\hat{H}_{\text{transmon}} = \omega \hat{a}^\dag \hat{a} + {\delta \over 2} \hat{a}^\dag \hat{a}^\dag \hat{a} \hat{a}
+}
+\end{equation}
+$$
+
+We can also add an on resonance driving term to the transmon Hamiltonian of the form 
+
+$$
+\begin{equation}
+\hat{H}_d(t) = \Omega(t)\left(\hat{a} e^{i (\omega t + \phi(t))} + \hat{a}^\dag e^{-i (\omega t + \phi(t))}\right)
+\end{equation}
+$$
+
+where $\Omega(t)$ is the amplitude of the drive and $\phi(t)$ is the phase. 
+
+
+
 ## rotating wave approximation
 
+To understand the rotating wave approximation it is necessary to understand [unitary transformations](https://en.wikipedia.org/wiki/Unitary_transformation_(quantum_mechanics)) in quantum mechanics. Let's say we want to transform a state unitarily, i.e,
+
+$$
+\psi(t) \to \psi'(t) = U(t) \psi(t)
+$$
+
+then, using the Schrodinger equation, we find that the Hamiltonian must transform as
+
+$$
+\hat{H} \to \hat{H}' = U\hat{H} U^\dag  + i \dot{U} U^\dag 
+$$
+
+which is a type of gauge transformation (see my post on [ghosts, gauges, and generating functionals](/posts/ghosts-gauges-and-generating-functionals) for an example in QFT).
+
+Now, using communtation properties of the ladder operators $\hat{a}$ and $\hat{a}^\dag$, namely $[\hat{a}, \hat{a}^\dag] = 1$, we can write the transmon Hamiltonian in (4) as 
+
+$$
+\begin{equation}
+\hat{H} = \omega \hat{n} + {\delta \over 2} \hat{n} (\hat{n} - 1)
+\end{equation}
+$$
+
+where $\hat{n} = \hat{a}^\dag \hat{a}$ is the number operator. Using the unitary transformation $U(t) = e^{i \omega t \hat{n}}$ --- moving into the rotating frame of the transmon at the resonant frequency --- we can transform the Hamiltonian to 
+
+$$
+\begin{aligned}
+\hat{H} \to \hat{H}' 
+&= U(t) \hat{H} U^\dag(t) + i \dot{U} U^\dag \\\\
+&= e^{i \omega t \hat{n}} \left( \omega \hat{n} + {\delta \over 2} \hat{n} (\hat{n} - 1) \right) e^{-i \omega t \hat{n}} - \omega \hat{n} \\\\
+&= {\delta \over 2} \hat{n} (\hat{n} - 1)\\\\
+\end{aligned} 
+$$
+
+since $[e^{i \omega t \hat{n}}, \hat{n}] = 0$.
+
+The drive term in (5) transforms as:
+
+$$
+\begin{aligned}
+\hat{H}_d(t) \to \hat{H}'_d(t) 
+&= U(t) \hat{H}_d(t) U^\dag(t) \\\\
+&= \Omega(t) \left( U(t) \hat{a} U^\dag(t) e^{i (\omega t + \phi(t))} + U(t) \hat{a}^\dag U^\dag(t) e^{-i (\omega t + \phi(t))} \right) \\\\
+&= \Omega(t) \left( \hat{a} e^{i \phi(t)} + \hat{a}^\dag e^{-i \phi(t)} \right) \\\\
+\end{aligned}
+$$
+
+where we have used $e^{i \omega t \hat{n}} \hat{a} e^{-i \omega t \hat{n}} = \hat{a} e^{-i\omega t}$ and $e^{i \omega t \hat{n}} \hat{a}^\dag e^{i \omega t \hat{n}} = \hat{a}^\dag e^{i\omega t}$.
+
+> **Note:** The identity $e^{i \omega t \hat{n}} \hat{a} e^{-i \omega t \hat{n}} = \hat{a} e^{-i\omega t}$ can be derived using the Baker-Campbell-Hausdorff formula:
+>
+> $$
+> \begin{aligned}
+> e^X Y e^{-X} &= Y + [X, Y] + {1 \over 2!} [X, [X, Y]] + {1 \over 3!} [X, [X, [X, Y]]] + \cdots \\\\
+> &= \sum_{n=0}^\infty {1 \over n!} \underbrace{[X, [X, \cdots [X}_{n \text{ times}}, Y]] \cdots ] \\\\
+> &= \sum\_{n=0}^\infty {1 \over n!} (\operatorname{ad}_X)^n (Y) \\\\
+> \end{aligned}
+> $$
+>
+> where $\operatorname{ad}_X$ is the adjoint operator defined as $\operatorname{ad}_X(Y) = [X, Y]$. In our case, $X = i \omega t \hat{n}$ and $Y = \hat{a}$, so
+>
+> $$
+> \begin{aligned}
+> (\operatorname{ad}_{i \omega t \hat{n}})^n (\hat{a}) 
+> &= [i \omega t \hat{n}, [i \omega t \hat{n}, \cdots [i \omega t \hat{n}, \hat{a}]] \cdots ] \\\\ 
+> &= (i \omega t)^n (\operatorname{ad}\_{\hat{n}})^n (\hat{a}) \\\\
+> &= (i \omega t)^n (-1)^n \hat{a} \\\\
+> &= (-i \omega t)^n \hat{a} \\\\
+> \end{aligned}
+> $$
+>
+> using $[\hat{n}, \hat{a}] = -\hat{a}$, yielding
+>
+> $$
+> \begin{aligned}
+> e^{i \omega t \hat{n}} \hat{a} e^{-i \omega t \hat{n}}
+> &= \sum_{n=0}^\infty {1 \over n!} (-i \omega t)^n \hat{a} \\\\
+> &= \hat{a} e^{-i \omega t}. \\\\
+> \end{aligned}
+> $$
+>
+> Similarly, since $[\hat{n}, \hat{a}^\dag] = \hat{a}^\dag$, $e^{i \omega t \hat{n}} \hat{a}^\dag e^{-i \omega t \hat{n}} = \hat{a}^\dag e^{i \omega t}$. 
 
 ## 
 
