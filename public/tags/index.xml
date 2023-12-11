@@ -5,7 +5,34 @@
     <link>https://aarontrowbridge.github.io/tags/</link>
     <description>Recent content in Tags on Aaron Trowbridge</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 30 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 31 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>data visualization</title>
+      <link>https://aarontrowbridge.github.io/tags/data-visualization/</link>
+      <pubDate>Thu, 31 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/tags/data-visualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mathematical finance</title>
+      <link>https://aarontrowbridge.github.io/tags/mathematical-finance/</link>
+      <pubDate>Thu, 31 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/tags/mathematical-finance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stochastic processes</title>
+      <link>https://aarontrowbridge.github.io/tags/stochastic-processes/</link>
+      <pubDate>Thu, 31 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/tags/stochastic-processes/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>julia</title>
       <link>https://aarontrowbridge.github.io/tags/julia/</link>
@@ -30,15 +57,6 @@
       <pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://aarontrowbridge.github.io/tags/optimization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data visualization</title>
-      <link>https://aarontrowbridge.github.io/tags/data-visualization/</link>
-      <pubDate>Mon, 20 Dec 2021 10:17:17 -0500</pubDate>
-      
-      <guid>https://aarontrowbridge.github.io/tags/data-visualization/</guid>
       <description></description>
     </item>
     
@@ -106,29 +124,11 @@
     </item>
     
     <item>
-      <title>mathematical finance</title>
-      <link>https://aarontrowbridge.github.io/tags/mathematical-finance/</link>
-      <pubDate>Sun, 01 Aug 2021 10:17:17 -0500</pubDate>
-      
-      <guid>https://aarontrowbridge.github.io/tags/mathematical-finance/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>numerical methods</title>
       <link>https://aarontrowbridge.github.io/tags/numerical-methods/</link>
       <pubDate>Sun, 01 Aug 2021 10:17:17 -0500</pubDate>
       
       <guid>https://aarontrowbridge.github.io/tags/numerical-methods/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>stochastic processes</title>
-      <link>https://aarontrowbridge.github.io/tags/stochastic-processes/</link>
-      <pubDate>Sun, 01 Aug 2021 10:17:17 -0500</pubDate>
-      
-      <guid>https://aarontrowbridge.github.io/tags/stochastic-processes/</guid>
       <description></description>
     </item>
     

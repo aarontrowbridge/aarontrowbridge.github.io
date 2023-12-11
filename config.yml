@@ -61,8 +61,8 @@ params:
     # profile-mode
     profileMode:
         enabled: true # needs to be explicitly set
-        title: My Blog 
-        subtitle: "writing for learning's sake"
+        title: Musings 
+        subtitle: "not quite a physicist, roboticist, or a philosopher"
         imageUrl: "images/profile_pic.jpg"
         imageWidth: 200 
         imageHeight: 200 

@@ -5,7 +5,16 @@
     <link>https://aarontrowbridge.github.io/posts/</link>
     <description>Recent content in Posts on Aaron Trowbridge</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 30 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 31 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>risk neutrality: the equivalent martingale measure</title>
+      <link>https://aarontrowbridge.github.io/posts/equivalent-martingale-measures/</link>
+      <pubDate>Thu, 31 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://aarontrowbridge.github.io/posts/equivalent-martingale-measures/</guid>
+      <description>an explanation of the risk-neutral measure, a result of Girsanov&amp;#39;s theorem, commonly deployed by &amp;#34;sell-side&amp;#34; financial institutions to simplify derivative pricing</description>
+    </item>
+    
     <item>
       <title>generative adversarial networks</title>
       <link>https://aarontrowbridge.github.io/posts/generative-adversarial-nets/</link>

@@ -1,6 +1,7 @@
 ---
 title: "Notes" # in any language you want
 layout: "notes" # is necessary
+url: "/notes/" # link your page to your url
 description: "a collection of notes, slides, and other documents"
 date: 2022-01-26T10:17:17-05:00
 ---
