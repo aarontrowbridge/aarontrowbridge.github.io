@@ -5,7 +5,7 @@ date: 2023-12-10
 description: "a walkthrough of applying the rotating wave approximation to a driven multilevel transmon qubit"
 tags: ["quantum mechanics", "quantum computing", "quantum control"]
 categories: ["physics"] 
-draft: false 
+draft: true 
 showToc: true
 TocOpen: false 
 comments: true 
