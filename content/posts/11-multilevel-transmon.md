@@ -29,11 +29,13 @@ editPost:
 
 The *transmon* qubit, first proposed in 2007 by Koch et al. [^1], has become a top contender for realizing large-scale NISQ devices.  The transmon is based on an anharmonic oscillator realized by a Josephson junction shunted by a capacitor. Anharmonicity --- i.e. unevenly separated energy levels, c.f. the harmonic oscillator --- is the key ingredient enabling a stable two-level subsystem where the qubit state will live. 
 
-The circuit diagram (taken from [^1]) is shown below. 
+The circuit diagram (taken from [^1]), shown below, 
 
 ![transmon circuit diagram](/images/multilevel-transmon/transmon-circuit.png)
 
-## the Hamiltonian
+consists of a Josephson junction shunted by a capacitor. The Josephson junction is a nonlinear element that can be modeled as a nonlinear inductance $L_J(\varphi) = \varphi_0 / I_c \cos(\varphi)$, where $\varphi$ is the phase across the junction, $\varphi_0 = h / 2e$ is the reduced flux quantum, and $I_c$ is the critical current of the junction. The capacitor is modeled as a linear capacitance $C$.
+
+## the lab-frame Hamiltonian
 
 Without going into all the details of this circuit (see [^1] for more), the simplified Hamiltonian for this system is given by
 
@@ -45,7 +47,7 @@ $$
 
 where $\hat{n}$ is the charge number operator and $\hat{\varphi}$ is the phase operator; $\hat{n} \equiv \partial_{\hat{\varphi}}$ and $\hat{\varphi}$ are canonically conjugate variables. The first term is the charging energy of the capacitor and the second term is the Josephson energy.
 
-For small $\varphi$, we can expand the cosine term to fourth order:
+For small $\varphi$, i.e. weak anharmonicity, we can approximate (1) by expanding the cosine term to fourth order:
 
 $$
 \begin{equation}
@@ -63,7 +65,9 @@ $$
 \end{equation}
 $$
 
-where $\omega = \sqrt{8E_J E_C}$ is the resonant frequency of the oscillator and $\delta = -E_C$ is the anharmonicity.
+where $\omega = \sqrt{8E_J E_C} - E_C$ is the resonant frequency of the oscillator and $\delta = -E_C$ is the anharmonicity.
+
+> **Note:** the transmon being only weekly anharmonic means leakage errors will be significant when driving the qubit with large amplitudes. 
 
 At this point in the derivation of the typical transmon Hamiltonian, a lot of handwaving is used to disappear a number of terms in (3), using the *rotating wave approximation* (RWA) as justification.  The resulting Hamiltonian is
 
@@ -89,7 +93,7 @@ where $\Omega(t)$ is the amplitude of the drive and $\phi(t)$ is the phase.
 
 ## rotating wave approximation
 
-To understand the rotating wave approximation it is necessary to understand [unitary transformations](https://en.wikipedia.org/wiki/Unitary_transformation_(quantum_mechanics)) in quantum mechanics. Let's say we want to transform a state unitarily, i.e,
+To understand the rotating wave approximation (RWA) it is necessary to understand [unitary transformations](https://en.wikipedia.org/wiki/Unitary_transformation_(quantum_mechanics)) in quantum mechanics. Let's say we want to transform a state unitarily, i.e,
 
 $$
 \psi(t) \to \psi'(t) = U(t) \psi(t)
@@ -171,7 +175,27 @@ where we have used $e^{i \omega t \hat{n}} \hat{a} e^{-i \omega t \hat{n}} = \ha
 >
 > Similarly, since $[\hat{n}, \hat{a}^\dag] = \hat{a}^\dag$, $e^{i \omega t \hat{n}} \hat{a}^\dag e^{-i \omega t \hat{n}} = \hat{a}^\dag e^{i \omega t}$. 
 
-## 
+## the rotating-frame Hamiltonian 
+
+Putting together all of the pieces above we arrive at the following hamiltonian for the transmon in the *rotating frame*:
+
+$$
+\begin{equation}
+\boxed{
+\hat{H}^{\text{RWA}}_{\text{transmon}} = {\delta \over 2} \hat{a}^\dag \hat{a}^\dag \hat{a} \hat{a} + u(t)\hat{a} + u^*(t) \hat{a}^\dag 
+}
+\end{equation}
+$$
+
+where $u(t)$ is a complex-valued control function that can be used to drive the transmon. 
+
+> **Note:** To accomadate numerical optimization methods that require real-valued control functions, we can rewrite the drive term $\hat{H}_d^{\text{RWA}}$ in (8) as
+> $$
+> \begin{equation}
+> \hat{H}^{\text{RWA}}_d = u_1(t) (\hat{a} + \hat{a}^\dag) + u_2(t) i (\hat{a} - \hat{a}^\dag) 
+> \end{equation}
+> $$
+> where we used $u(t) = u_1(t) + i u_2(t)$.
 
 
 
