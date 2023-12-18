@@ -62,7 +62,7 @@ params:
     profileMode:
         enabled: true # needs to be explicitly set
         title: Musings 
-        subtitle: "not quite a physicist, roboticist, or a philosopher"
+        subtitle: "not quite a physicist, roboticist, or a classicist"
         imageUrl: "images/profile_pic.jpg"
         imageWidth: 200 
         imageHeight: 200 

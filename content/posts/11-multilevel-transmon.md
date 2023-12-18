@@ -33,7 +33,7 @@ The circuit diagram (taken from [^1]), shown below,
 
 ![transmon circuit diagram](/images/multilevel-transmon/transmon-circuit.png)
 
-consists of a Josephson junction shunted by a capacitor. The Josephson junction is a nonlinear element that can be modeled as a nonlinear inductance $L_J(\varphi) = \varphi_0 / I_c \cos(\varphi)$, where $\varphi$ is the phase across the junction, $\varphi_0 = h / 2e$ is the reduced flux quantum, and $I_c$ is the critical current of the junction. The capacitor is modeled as a linear capacitance $C$.
+consists of a Josephson junction element shunted by a capacitor.  For a detailed description of the this system and quantum electrical circuits in general, see [^2].
 
 ## the lab-frame Hamiltonian
 
@@ -198,6 +198,9 @@ where $u(t)$ is a complex-valued control function that can be used to drive the 
 > where we used $u(t) = u_1(t) + i u_2(t)$.
 
 
+## conclusions
+
+We can see that using unitary transformations and  
 
 
 
@@ -205,5 +208,5 @@ where $u(t)$ is a complex-valued control function that can be used to drive the 
 
 
 [^1]: Koch, Jens, et al. "Charge-insensitive qubit design derived from the Cooper pair box." [arXiv:cond-mat/0703002](https://arxiv.org/abs/cond-mat/0703002) (2007).
-[^2]: insert ref to thesis here 
+[^2]: Ciani, Alessandro, et al. "Lecture Notes on Quantum Electrical Circutis." [arXiv:2312.05329](https://arxiv.org/abs/2312.05329) (2019). 
  
