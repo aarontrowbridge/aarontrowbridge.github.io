@@ -1,173 +1,138 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Aaron Trowbridge</title>
     <link>https://aarontrowbridge.github.io/tags/</link>
     <description>Recent content in Tags on Aaron Trowbridge</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 31 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 31 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://aarontrowbridge.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>data visualization</title>
       <link>https://aarontrowbridge.github.io/tags/data-visualization/</link>
       <pubDate>Thu, 31 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/data-visualization/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>mathematical finance</title>
       <link>https://aarontrowbridge.github.io/tags/mathematical-finance/</link>
       <pubDate>Thu, 31 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/mathematical-finance/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>stochastic processes</title>
       <link>https://aarontrowbridge.github.io/tags/stochastic-processes/</link>
       <pubDate>Thu, 31 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/stochastic-processes/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>julia</title>
       <link>https://aarontrowbridge.github.io/tags/julia/</link>
       <pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/julia/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>machine learning</title>
       <link>https://aarontrowbridge.github.io/tags/machine-learning/</link>
       <pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/machine-learning/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>optimization</title>
       <link>https://aarontrowbridge.github.io/tags/optimization/</link>
       <pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/optimization/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>web development</title>
       <link>https://aarontrowbridge.github.io/tags/web-development/</link>
       <pubDate>Mon, 20 Dec 2021 10:17:17 -0500</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/web-development/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>analytical mechanics</title>
       <link>https://aarontrowbridge.github.io/tags/analytical-mechanics/</link>
       <pubDate>Thu, 09 Dec 2021 10:17:17 -0500</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/analytical-mechanics/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>convex analysis</title>
       <link>https://aarontrowbridge.github.io/tags/convex-analysis/</link>
       <pubDate>Thu, 09 Dec 2021 10:17:17 -0500</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/convex-analysis/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>mathematical methods</title>
       <link>https://aarontrowbridge.github.io/tags/mathematical-methods/</link>
       <pubDate>Thu, 09 Dec 2021 10:17:17 -0500</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/mathematical-methods/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>gauge theory</title>
       <link>https://aarontrowbridge.github.io/tags/gauge-theory/</link>
       <pubDate>Sun, 31 Oct 2021 10:17:17 -0500</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/gauge-theory/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>path integrals</title>
       <link>https://aarontrowbridge.github.io/tags/path-integrals/</link>
       <pubDate>Sun, 31 Oct 2021 10:17:17 -0500</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/path-integrals/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>quantum field theory</title>
       <link>https://aarontrowbridge.github.io/tags/quantum-field-theory/</link>
       <pubDate>Sun, 31 Oct 2021 10:17:17 -0500</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/quantum-field-theory/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>numerical methods</title>
       <link>https://aarontrowbridge.github.io/tags/numerical-methods/</link>
       <pubDate>Sun, 01 Aug 2021 10:17:17 -0500</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/numerical-methods/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>group theory</title>
       <link>https://aarontrowbridge.github.io/tags/group-theory/</link>
       <pubDate>Sun, 13 Jun 2021 10:17:17 -0500</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/group-theory/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>linear algebra</title>
       <link>https://aarontrowbridge.github.io/tags/linear-algebra/</link>
       <pubDate>Sun, 13 Jun 2021 10:17:17 -0500</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/linear-algebra/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>tensors</title>
       <link>https://aarontrowbridge.github.io/tags/tensors/</link>
       <pubDate>Sun, 13 Jun 2021 10:17:17 -0500</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/tensors/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>quantum gravity</title>
       <link>https://aarontrowbridge.github.io/tags/quantum-gravity/</link>
       <pubDate>Wed, 09 Jun 2021 10:17:17 -0500</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/tags/quantum-gravity/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

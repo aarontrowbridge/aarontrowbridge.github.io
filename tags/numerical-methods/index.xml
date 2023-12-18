@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>numerical methods on Aaron Trowbridge</title>
     <link>https://aarontrowbridge.github.io/tags/numerical-methods/</link>
     <description>Recent content in numerical methods on Aaron Trowbridge</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Aug 2021 10:17:17 -0500</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/tags/numerical-methods/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Aug 2021 10:17:17 -0500</lastBuildDate>
+    <atom:link href="https://aarontrowbridge.github.io/tags/numerical-methods/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>the Heston stochastic volatility model</title>
       <link>https://aarontrowbridge.github.io/posts/the-heston-model/</link>
       <pubDate>Sun, 01 Aug 2021 10:17:17 -0500</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/posts/the-heston-model/</guid>
       <description>an overview of a relatively modern and sophisticated model for pricing financial derivatives</description>
     </item>
-    
     <item>
       <title>the Freeman method</title>
       <link>https://aarontrowbridge.github.io/posts/the-freeman-method/</link>
       <pubDate>Wed, 09 Jun 2021 10:17:17 -0500</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/posts/the-freeman-method/</guid>
       <description>an accelerated approach to the Metropolis algorithm for lattice quantum gravity</description>
     </item>
-    
   </channel>
 </rss>

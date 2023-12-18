@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>stochastic processes on Aaron Trowbridge</title>
     <link>https://aarontrowbridge.github.io/tags/stochastic-processes/</link>
     <description>Recent content in stochastic processes on Aaron Trowbridge</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 31 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/tags/stochastic-processes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 31 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://aarontrowbridge.github.io/tags/stochastic-processes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>risk neutrality: the equivalent martingale measure</title>
       <link>https://aarontrowbridge.github.io/posts/equivalent-martingale-measures/</link>
       <pubDate>Thu, 31 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/posts/equivalent-martingale-measures/</guid>
       <description>an explanation of the risk-neutral measure, a result of Girsanov&amp;#39;s theorem, commonly deployed by &amp;#34;sell-side&amp;#34; financial institutions to simplify derivative pricing</description>
     </item>
-    
     <item>
       <title>the Heston stochastic volatility model</title>
       <link>https://aarontrowbridge.github.io/posts/the-heston-model/</link>
       <pubDate>Sun, 01 Aug 2021 10:17:17 -0500</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/posts/the-heston-model/</guid>
       <description>an overview of a relatively modern and sophisticated model for pricing financial derivatives</description>
     </item>
-    
   </channel>
 </rss>

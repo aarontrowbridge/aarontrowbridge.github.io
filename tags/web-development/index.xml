@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>web development on Aaron Trowbridge</title>
     <link>https://aarontrowbridge.github.io/tags/web-development/</link>
     <description>Recent content in web development on Aaron Trowbridge</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 20 Dec 2021 10:17:17 -0500</lastBuildDate><atom:link href="https://aarontrowbridge.github.io/tags/web-development/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Dec 2021 10:17:17 -0500</lastBuildDate>
+    <atom:link href="https://aarontrowbridge.github.io/tags/web-development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>using Julia to do web based interactive plotting</title>
       <link>https://aarontrowbridge.github.io/posts/interactive-julia-plotting/</link>
       <pubDate>Mon, 20 Dec 2021 10:17:17 -0500</pubDate>
-      
       <guid>https://aarontrowbridge.github.io/posts/interactive-julia-plotting/</guid>
       <description>a tutorial for setting up web based interactive plots, using Julia and Makie.jl</description>
     </item>
-    
   </channel>
 </rss>
