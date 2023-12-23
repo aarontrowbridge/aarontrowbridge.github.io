@@ -6,7 +6,7 @@ description: "a walkthrough of applying the rotating wave approximation to a dri
 tags: ["quantum mechanics", "quantum computing", "quantum control"]
 categories: ["physics"] 
 draft: true 
-showToc: true
+showToc: true 
 TocOpen: false 
 comments: true 
 disableShare: false
@@ -20,7 +20,7 @@ cover:
     alt: "transmon circuit diagram" # alt text
     caption: "transmon circuit diagram" # display caption under cover
     relative: false # when using page bundles set this to true
-    hidden: true # only hide on current single page
+    hidden: true  # only hide on current single page
 editPost:
     URL: "https://github.com/aarontrowbridge/aarontrowbridge.github.io/content"
     Text: "Suggest Changes" # edit text
@@ -196,11 +196,6 @@ where $u(t)$ is a complex-valued control function that can be used to drive the 
 > \end{equation}
 > $$
 > where we used $u(t) = u_1(t) + i u_2(t)$.
-
-
-## conclusions
-
-We can see that using unitary transformations and  
 
 
 
