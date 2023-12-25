@@ -1,5 +1,5 @@
 ---
-title: "multilevel transmon qubits"
+title: "qubits embedded in a multilevel system"
 url: "posts/multilevel-transmon"
 date: 2023-12-10
 description: "a walkthrough of applying the rotating wave approximation to a driven multilevel transmon qubit"
@@ -21,6 +21,7 @@ cover:
     caption: "transmon circuit diagram" # display caption under cover
     relative: false # when using page bundles set this to true
     hidden: true  # only hide on current single page
+    hiddenInSingle: true
 editPost:
     URL: "https://github.com/aarontrowbridge/aarontrowbridge.github.io/content"
     Text: "Suggest Changes" # edit text
@@ -35,7 +36,7 @@ The circuit diagram (taken from [^1]), shown below,
 
 consists of a Josephson junction element shunted by a capacitor.  For a detailed description of the this system and quantum electrical circuits in general, see [^2].
 
-## the lab-frame Hamiltonian
+## lab-frame Hamiltonian
 
 Without going into all the details of this circuit (see [^1] for more), the simplified Hamiltonian for this system is given by
 
@@ -83,7 +84,7 @@ We can also add an on resonance driving term to the transmon Hamiltonian of the 
 
 $$
 \begin{equation}
-\hat{H}_d(t) = \Omega(t)\left(\hat{a} e^{i (\omega t + \phi(t))} + \hat{a}^\dag e^{-i (\omega t + \phi(t))}\right)
+\hat{H}_d(t) = \Omega(t)\left(e^{i (\omega t + \phi(t))} \hat{a} + e^{-i (\omega t + \phi(t))} \hat{a}^\dag \right)
 \end{equation}
 $$
 
@@ -134,12 +135,13 @@ $$
 \begin{aligned}
 \hat{H}_d(t) \to \hat{H}'_d(t) 
 &= U(t) \hat{H}_d(t) U^\dag(t) \\\\
-&= \Omega(t) \left( U(t) \hat{a} U^\dag(t) e^{i (\omega t + \phi(t))} + U(t) \hat{a}^\dag U^\dag(t) e^{-i (\omega t + \phi(t))} \right) \\\\
-&= \Omega(t) \left( \hat{a} e^{i \phi(t)} + \hat{a}^\dag e^{-i \phi(t)} \right) \\\\
+&= \Omega(t) \left( e^{i (\omega t + \phi(t))} U(t) \hat{a} U^\dag(t) + e^{-i (\omega t + \phi(t))} U(t) \hat{a}^\dag U^\dag(t) \right) \\\\
+&= \Omega(t) \left( e^{i \phi(t)} \hat{a} + e^{-i \phi(t)} \hat{a}^\dag \right) \\\\
 \end{aligned}
 $$
 
-where we have used $e^{i \omega t \hat{n}} \hat{a} e^{-i \omega t \hat{n}} = \hat{a} e^{-i\omega t}$ and $e^{i \omega t \hat{n}} \hat{a}^\dag e^{i \omega t \hat{n}} = \hat{a}^\dag e^{i\omega t}$.
+where we have used $e^{i \omega t \hat{n}} \hat{a} e^{-i \omega t \hat{n}} = e^{-i\omega t}\hat{a} $ and $e^{i \omega t \hat{n}} \hat{a}^\dag e^{i \omega t \hat{n}} = e^{i\omega t} \hat{a}^\dag $.
+
 
 > **Note:** The identity $e^{i \omega t \hat{n}} \hat{a} e^{-i \omega t \hat{n}} = \hat{a} e^{-i\omega t}$ can be derived using the Baker-Campbell-Hausdorff formula:
 >
@@ -169,20 +171,22 @@ where we have used $e^{i \omega t \hat{n}} \hat{a} e^{-i \omega t \hat{n}} = \ha
 > \begin{aligned}
 > e^{i \omega t \hat{n}} \hat{a} e^{-i \omega t \hat{n}}
 > &= \sum_{n=0}^\infty {1 \over n!} (-i \omega t)^n \hat{a} \\\\
-> &= \hat{a} e^{-i \omega t}. \\\\
+> &=  e^{-i \omega t} \hat{a}. \\\\
 > \end{aligned}
 > $$
 >
-> Similarly, since $[\hat{n}, \hat{a}^\dag] = \hat{a}^\dag$, $e^{i \omega t \hat{n}} \hat{a}^\dag e^{-i \omega t \hat{n}} = \hat{a}^\dag e^{i \omega t}$. 
+> Similarly, since $[\hat{n}, \hat{a}^\dag] = \hat{a}^\dag$, $e^{i \omega t \hat{n}} \hat{a}^\dag e^{-i \omega t \hat{n}} = e^{i \omega t} \hat{a}^\dag$. 
 
-## the rotating-frame Hamiltonian 
+With this we can see why terms such as $\hat{a} \hat{a} \hat{a} \hat{a}$ and $\hat{a}^\dag \hat{a} \hat{a} \hat{a}$ disappear going from equation (3) to equation (4), using the RWA; the unitary transformation leaves fast oscillating factors attached to those terms.   
+
+## rotating-frame Hamiltonian 
 
 Putting together all of the pieces above we arrive at the following hamiltonian for the transmon in the *rotating frame*:
 
 $$
 \begin{equation}
 \boxed{
-\hat{H}^{\text{RWA}}_{\text{transmon}} = {\delta \over 2} \hat{a}^\dag \hat{a}^\dag \hat{a} \hat{a} + u(t)\hat{a} + u^*(t) \hat{a}^\dag 
+\hat{H}^{\text{RWA}}_{\text{transmon}}(t) = {\delta \over 2} \hat{a}^\dag \hat{a}^\dag \hat{a} \hat{a} + u(t)\hat{a} + u^*(t) \hat{a}^\dag 
 }
 \end{equation}
 $$
@@ -192,10 +196,29 @@ where $u(t)$ is a complex-valued control function that can be used to drive the 
 > **Note:** To accomadate numerical optimization methods that require real-valued control functions, we can rewrite the drive term $\hat{H}_d^{\text{RWA}}$ in (8) as
 > $$
 > \begin{equation}
-> \hat{H}^{\text{RWA}}_d = u_1(t) (\hat{a} + \hat{a}^\dag) + u_2(t) i (\hat{a} - \hat{a}^\dag) 
+> \hat{H}^{\text{RWA}}_d(t) = u_1(t) (\hat{a} + \hat{a}^\dag) + u_2(t) i (\hat{a} - \hat{a}^\dag) 
 > \end{equation}
 > $$
 > where we used $u(t) = u_1(t) + i u_2(t)$.
+
+## qubit subspace
+
+Staring at equation (7), it becomes apparent that if we restrict ourselves to two levels (which is where we typically want our state populations to live when building qubits), $\hat{a}^\dag \hat{a}^\dag \hat{a} \hat{a} = 0$, $\hat{a} + \hat{a}^\dag = X$, and $i(\hat{a} - \hat{a}^\dag) = -Y$, and we find ourselves with the following Hamiltonian:
+
+$$
+\begin{equation}
+\hat{H}(t) = u_1(t) X + u_2(t) Y
+\end{equation}
+$$
+
+where $X$ and $Y$ are the Pauli matrices. And, since $[X, Y] \propto Z$, this Hamiltonian is [*fully controllable*](https://en.wikipedia.org/wiki/Controllability) --- this is a technical point, which in the quantum setting says that the Lie subalgebra generated from the control Hamiltonians is equal to the full Lie algebra for $SU(2)$, and I will hopefully elucidate this in a later post --- which means that realizing any single qubit gate is trivial.  
+
+Anyway, this is all idealized thinking, as the transmon is *not* a two-level system, we are using an approximation in a rotating frame, and we began by truncating a cosine term in the original Hamiltonian (1) to fourth order. We have various errors to account for; let's look at two of them.
+
+### leakage errors
+
+
+### frame errors 
 
 
 
@@ -203,5 +226,5 @@ where $u(t)$ is a complex-valued control function that can be used to drive the 
 
 
 [^1]: Koch, Jens, et al. "Charge-insensitive qubit design derived from the Cooper pair box." [arXiv:cond-mat/0703002](https://arxiv.org/abs/cond-mat/0703002) (2007).
-[^2]: Ciani, Alessandro, et al. "Lecture Notes on Quantum Electrical Circutis." [arXiv:2312.05329](https://arxiv.org/abs/2312.05329) (2019). 
+[^2]: Ciani, Alessandro, et al. "Lecture Notes on Quantum Electrical Circuits." [arXiv:2312.05329](https://arxiv.org/abs/2312.05329) (2019). 
  
