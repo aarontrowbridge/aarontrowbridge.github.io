@@ -28,7 +28,7 @@ editPost:
     appendFilePath: true # to append file path to Edit link
 ---
 
-The *transmon* qubit, first proposed in 2007 by Koch et al. [^1], has become a top contender for realizing large-scale NISQ devices.  The transmon is based on an anharmonic oscillator realized by a Josephson junction shunted by a capacitor. Anharmonicity --- i.e. unevenly separated energy levels, c.f. the harmonic oscillator --- is the key ingredient enabling a stable two-level subsystem where the qubit state will live. 
+The *transmon* qubit, first proposed in 2007 by Koch et al. [^1], has become a top contender for realizing large-scale NISQ devices.  The transmon is based on an anharmonic oscillator realized by a Josephson junction shunted to a capacitor. Anharmonicity --- i.e. unevenly separated energy levels, c.f. the harmonic oscillator --- is the key ingredient enabling a stable two-level subsystem where the qubit state will live. 
 
 The circuit diagram (taken from [^1]), shown below, 
 
