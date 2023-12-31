@@ -22,7 +22,7 @@ editPost:
 ---
 
 
-As this planet completes yet another revolution around a pocket of spacetime curvature abounding with scintillating, mingling ions --- and while the sparks seem to be flying in all of the wrong ways here on earth --- I wanted to share some thoughts on a few of the books I read this year. I will in no way do these words justice, but hopefully, I can convey some of the insights, joys, laughs, and tears that they brought me.  
+As this planet completes yet another revolution around a pocket of spacetime curvature abounding with scintillating, mingling ions --- and while the sparks seem to be flying in all of the wrong ways here on earth --- I wanted to share some thoughts on a few of the books I read this year. I will in no way do these works justice, but hopefully, I can convey some of the insights, joys, laughs, and tears that they brought me.  
 
 > *"E il naufragar m'è dolce in questo mare (and sweet to me is foundering in the sea)"* -- Giacomo Leopardi, via Italo Calvino
 
