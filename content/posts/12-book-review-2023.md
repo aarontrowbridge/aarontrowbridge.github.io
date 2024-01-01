@@ -2,7 +2,7 @@
 title: "six notable books I read in 2023"
 url: "posts/book-review-2023"
 date: 2023-12-31
-description: "I review six of the most notable books I read in 2023"
+description: "I review six books I read in 2023 that had a meaningful impact on me."
 tags: ["literature", "book-review"]
 categories: ["literature"]
 draft: false 
@@ -137,7 +137,9 @@ In this year in particular, with the advent of generative AI, we are facing a wh
 
 ### Multiplicity
 
-This year seems to me as if humanity is finally coming to bat regarding the state of our knowledge of the world. Calvino in this essay defends the novel that attempts an *encyclopedic* scope (since the noun *encyclopedia* literally means an encircling of all knowledge, this is a bit paradoxical); each one comes up short in some way, but the attempt is a noble one. The attempt by an author to grok (to use the timely term) every field of knowledge and bring it into his creation in a way that does it justice is maybe the most honorable of all literary pursuits. In practice, this is infeasible unless one allows himself to be beholden to rules, that will allow him to tame the infinite. I won't philosophize here on how this could apply to our society today, but I will end with a quote of Raymond Queneau, via Calvino:
+This year seems to me as if humanity is finally coming to bat regarding the state of our knowledge of the world. Calvino in this essay defends the novel that attempts an *encyclopedic* scope (since the noun *encyclopedia* literally means an encircling of all knowledge, this is a bit paradoxical); each one comes up short in some way, but the attempt is a noble one. 
+
+The attempt by an author to grok (I will begrudgingly use the timely term) every field of knowledge and bring it into his creation in a way that does it justice is maybe the most honorable of all literary pursuits. In practice, this is infeasible unless one allows himself to be beholden to rules, that will allow him to tame the infinite. I won't philosophize here on how this could apply to our society today, but I will end with a quote from Raymond Queneau, via Calvino:
 
 > *"Now this sort of inspiration, which consists in blindly obeying every impulse, is in fact slavery. The classical author who wrote his tragedy observing a certain number of known rules is freer than the poet who writes down whatever comes into his head and is slave to other rules of which he knows nothing."*
 
