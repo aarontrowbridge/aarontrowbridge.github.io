@@ -1,7 +1,7 @@
 ---
 title: "qubits embedded in a multilevel system"
 url: "posts/multilevel-transmon"
-date: 2023-12-10
+date: 2024-1-3
 description: "a walkthrough of applying the rotating wave approximation to a driven multilevel transmon qubit"
 tags: ["quantum mechanics", "quantum computing", "quantum control"]
 categories: ["physics"] 
