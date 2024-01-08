@@ -80,11 +80,12 @@ params:
           url: "https://twitter.com/aaron_trow"
         - name: github
           url: "https://github.com/aarontrowbridge"
+        - name: goodreads
+          url: "https://www.goodreads.com/user/show/171478239-aaron-trowbridge"
         - name: linkedin
           url: "https://www.linkedin.com/in/aaron-j-trowbridge/"
         - name: email 
           url: "mailto://aaron.j.trowbridge@gmail.com" 
-
 
     analytics:
         google:
