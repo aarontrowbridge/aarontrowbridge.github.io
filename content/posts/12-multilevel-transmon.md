@@ -62,11 +62,11 @@ Using $\hat{n} = {i \over 2} \sqrt[4]{E_J \over 2E_C}(\hat{a}^\dag - \hat{a})$ a
 
 $$
 \begin{equation}
-\hat{H} = \omega \hat{a}^\dag \hat{a} + {\delta \over 12} \left(\hat{a} + \hat{a}^\dag \right)^4
+\hat{H} = \omega_0 \hat{a}^\dag \hat{a} - {\delta \over 12} \left(\hat{a} + \hat{a}^\dag \right)^4
 \end{equation}
 $$
 
-where $\omega = \sqrt{8E_J E_C} - E_C$ is the resonant frequency of the oscillator and $\delta = -E_C$ is the anharmonicity.
+where $\omega_0 = \sqrt{8E_J E_C}$ is the *unshifted* resonant frequency of the oscillator and $\delta = E_C$ is the anharmonicity.
 
 > **Note:** the transmon being only weekly anharmonic means leakage errors will be significant when driving the qubit with large amplitudes. 
 
@@ -75,12 +75,13 @@ At this point in the derivation of the typical transmon Hamiltonian, a lot of ha
 $$
 \begin{equation}
 \boxed{
-\hat{H}_{\text{transmon}} = \omega \hat{a}^\dag \hat{a} + {\delta \over 2} \hat{a}^\dag \hat{a}^\dag \hat{a} \hat{a}
+\hat{H}_{\text{transmon}} = \omega \hat{a}^\dag \hat{a} - {\delta \over 2} \hat{a}^\dag \hat{a}^\dag \hat{a} \hat{a}
 }
 \end{equation}
 $$
+where $\omega = \omega_0 - \delta$ is the *shifted* resonant frequency of the oscillator. 
 
-We can also add an on resonance driving term to the transmon Hamiltonian of the form 
+We can also add an *on resonance* driving term to the transmon Hamiltonian of the form 
 
 $$
 \begin{equation}
