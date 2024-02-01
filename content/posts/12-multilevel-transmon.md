@@ -34,7 +34,7 @@ The circuit diagram (taken from [^1]), shown below,
 
 ![transmon circuit diagram](/images/multilevel-transmon/transmon-circuit.png)
 
-consists of a Josephson junction element shunted by a capacitor.  For a detailed description of the this system and quantum electrical circuits in general, see [^2].
+consists of a Josephson junction element shunted by a capacitor.  For a detailed description of this system and quantum electrical circuits in general, see [^2].
 
 ## lab-frame Hamiltonian
 
@@ -57,8 +57,7 @@ $$
 $$
 
 
-
-Using $\hat{n} = {i \over 2} \sqrt[4]{E_J \over 2E_C}(\hat{a}^\dag - \hat{a})$ and $\hat{\varphi} = {i \over 2} \sqrt[4]{2E_C \over E_J}(\hat{a}^\dag + \hat{a})$, we can rewrite the Hamiltonian (dropping constant terms, see [^2] for details) with the annihilation and creation operators $\hat{a}$ and $\hat{a}^\dag$:
+Using $\hat{n} = {i \over 2} \sqrt[4]{E_J \over 2E_C}(\hat{a}^\dag - \hat{a})$ and $\hat{\varphi} = \sqrt[4]{2E_C \over E_J}(\hat{a}^\dag + \hat{a})$, we can rewrite the Hamiltonian (dropping constant terms, see [^2] for details) with the annihilation and creation operators $\hat{a}$ and $\hat{a}^\dag$:
 
 $$
 \begin{equation}
@@ -182,7 +181,7 @@ With this we can see why terms such as $\hat{a} \hat{a} \hat{a} \hat{a}$ and $\h
 
 ## rotating-frame Hamiltonian 
 
-Putting together all of the pieces above we arrive at the following hamiltonian for the transmon in the *rotating frame*:
+Putting together all of the pieces above we arrive at the following Hamiltonian for the transmon in the *rotating frame*:
 
 $$
 \begin{equation}
@@ -257,7 +256,7 @@ Finally, using the cosine Hamiltonian in equation (1), we get the following puls
 
 ![cosine transmon pulse](/images/multilevel-transmon/cosine.png)
 
-Interestingly, the fidelity is higher than the quartic Hamiltonian, but lower than the duffing Hamiltonian.
+Interestingly, the fidelity is higher than the quartic Hamiltonian but lower than the duffing Hamiltonian.
 
 
 ## conclusions
