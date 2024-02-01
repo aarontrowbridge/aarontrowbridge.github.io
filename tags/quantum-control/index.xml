@@ -6,12 +6,12 @@
     <description>Recent content in quantum control on Aaron Trowbridge</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jan 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://aarontrowbridge.github.io/tags/quantum-control/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>multilevel transmon qubits</title>
+      <title>qubits embedded in a multilevel system</title>
       <link>https://aarontrowbridge.github.io/posts/multilevel-transmon/</link>
-      <pubDate>Sun, 10 Dec 2023 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate>
       <guid>https://aarontrowbridge.github.io/posts/multilevel-transmon/</guid>
       <description>a walkthrough of applying the rotating wave approximation to a driven multilevel transmon qubit</description>
     </item>
