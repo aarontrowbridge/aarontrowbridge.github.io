@@ -225,6 +225,7 @@ Anyway, this is all idealized thinking, as the transmon is *not* a two-level sys
 > \mathcal{F}(U, U_{\text{goal}}) = \left| \text{tr}\left( U^\dag U_{\text{goal}} \right) \right|^2
 > \end{equation}
 > $$
+> where $U$ is in the computational subspace, extracted from the full system unitary.
 
 ### rotating frame
 
