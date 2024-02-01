@@ -1,11 +1,11 @@
 ---
 title: "qubits embedded in a multilevel system"
 url: "posts/multilevel-transmon"
-date: 2024-01-08
+date: 2024-01-31
 description: "a walkthrough of applying the rotating wave approximation to a driven multilevel transmon qubit"
 tags: ["quantum mechanics", "quantum computing", "quantum control"]
 categories: ["physics"] 
-draft: true 
+draft: false 
 showToc: true 
 TocOpen: false 
 comments: true 
@@ -46,7 +46,7 @@ $$
 \end{equation}
 $$
 
-where $\hat{n}$ is the charge number operator and $\hat{\varphi}$ is the phase operator; $\hat{n} \equiv \partial_{\hat{\varphi}}$ and $\hat{\varphi}$ are canonically conjugate variables. The first term is the charging energy of the capacitor and the second term is the Josephson energy.
+where $\hat{n}$ is the charge number operator and $\hat{\varphi}$ is the phase operator; $\hat{n} \equiv \partial_{\hat{\varphi}}$ and $\hat{\varphi}$ are canonically conjugate variables. The first term is the charging energy of the capacitor and the second term is the Josephson energy. We refer to this as the *cosine* Hamiltonian.
 
 For small $\varphi$, i.e. weak anharmonicity, we can approximate (1) by expanding the cosine term to fourth order:
 
@@ -66,7 +66,7 @@ $$
 \end{equation}
 $$
 
-where $\omega_0 = \sqrt{8E_J E_C}$ is the *unshifted* resonant frequency of the oscillator and $\delta = E_C$ is the anharmonicity.
+where $\omega_0 = \sqrt{8E_J E_C}$ is the *unshifted* resonant frequency of the oscillator and $\delta = E_C$ is the anharmonicity. We refer to this as the *quartic* Hamiltonian.
 
 > **Note:** the transmon being only weekly anharmonic means leakage errors will be significant when driving the qubit with large amplitudes. 
 
@@ -89,7 +89,7 @@ $$
 \end{equation}
 $$
 
-where $\Omega(t)$ is the amplitude of the drive and $\phi(t)$ is the phase. 
+where $\Omega(t)$ is the amplitude of the drive and $\phi(t)$ is the phase. This Hamiltonian is referred to as the *duffing* oscillator Hamiltonian.
 
 
 
@@ -214,12 +214,73 @@ $$
 
 where $X$ and $Y$ are the Pauli matrices. And, since $[X, Y] \propto Z$, this Hamiltonian is [*fully controllable*](https://en.wikipedia.org/wiki/Controllability) --- this is a technical point, which in the quantum setting says that the Lie subalgebra generated from the control Hamiltonians is equal to the full Lie algebra for $SU(2)$, and I will hopefully elucidate this in a later post --- which means that realizing any single qubit gate is trivial.  
 
-Anyway, this is all idealized thinking, as the transmon is *not* a two-level system, we are using an approximation in a rotating frame, and we began by truncating a cosine term in the original Hamiltonian (1) to fourth order. We have various errors to account for; let's look at two of them.
 
-### leakage errors
+## frame errors 
+
+Anyway, this is all idealized thinking, as the transmon is *not* a two-level system, we are using an approximation in a rotating frame, and we began by truncating a cosine term in the original Hamiltonian (1) to fourth order. We have various errors to account for; let's look at one of them: error arising from the rotating frame approximation, both in the lab frame and in the rotating frame. 
+
+> **Note:** in the following we utilize the following unitary fidelity function:
+> $$
+> \begin{equation}
+> \mathcal{F}(U, U_{\text{goal}}) = \left| \text{tr}\left( U^\dag U_{\text{goal}} \right) \right|^2
+> \end{equation}
+> $$
+
+### rotating frame
+
+We begin by optimizing a pulse using [Piccolo.jl](https://github.com/aarontrowbridge/Piccolo.jl) to drive a transmon and realize and $X$ gate in the qubit subspace of a 4-level transmon in the rotating frame, i.e., using equation (7). We get the following pulse with $\mathcal{F} = 0.99996$:
+
+![rotating frame transmon pulse](/images/multilevel-transmon/rotating.png)
+
+### lab frame: duffing
+
+Rolling out in the lab frame of a 9-level transmon --- using a carrier wave at the qubit transmon frequency and upsampling the pulse to account for nyquist sampling errors --- with the duffing Hamiltonian in equation (4), we get the following pulse with $\mathcal{F} = 0.90135$:
+
+![duffing transmon pulse](/images/multilevel-transmon/duffing.png)
+
+A noticeable, but anticipated (at least ignoring the magnitude), drop in fidelity.
 
 
-### frame errors 
+### lab frame: quartic
+
+Using the quartic Hamiltonian in equation (3), we get the following pulse with $\mathcal{F} = 0.75057$:
+
+![quartic transmon pulse](/images/multilevel-transmon/quartic.png)
+
+A further, and significant, drop in fidelity, also possibly expected.
+
+
+### lab frame: cosine
+
+Finally, using the cosine Hamiltonian in equation (1), we get the following pulse with $\mathcal{F} = 0.87198$:
+
+![cosine transmon pulse](/images/multilevel-transmon/cosine.png)
+
+Interestingly, the fidelity is higher than the quartic Hamiltonian, but lower than the duffing Hamiltonian.
+
+
+## conclusions
+
+We have derived the typical transmon Hamiltonian, the duffing oscillator, and used the result to optimize an $X$ gate pulse in the rotating frame. Upon rolling this pulse out in the lab frame we see some interesting results:
+
+| Hamiltonian      | $\mathcal{F}(U_T, X)$|
+|------------------|----------------------|
+| rotating (eq. 7) | 0.99996              |
+| duffing (eq. 4)  | 0.90135              |
+| quartic (eq. 3)  | 0.75057              |
+| cosine (eq. 1)   | 0.87198              |
+
+It appears that ignored Hamiltonian elements play a significant role, and given that the simulation cost for all of these models was essentially equal, it begs the question, *why not use the full Hamiltonian?*
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -229,3 +290,4 @@ Anyway, this is all idealized thinking, as the transmon is *not* a two-level sys
 [^1]: Koch, Jens, et al. "Charge-insensitive qubit design derived from the Cooper pair box." [arXiv:cond-mat/0703002](https://arxiv.org/abs/cond-mat/0703002) (2007).
 [^2]: Ciani, Alessandro, et al. "Lecture Notes on Quantum Electrical Circuits." [arXiv:2312.05329](https://arxiv.org/abs/2312.05329) (2019). 
  
+
